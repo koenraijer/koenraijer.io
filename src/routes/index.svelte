@@ -52,7 +52,7 @@
   let amountLoaded = 50;
 
   // Spotlight post finder
-  const spotlight = (postArray.find(post => post[1].path.includes("web-development-resources")))[1]
+  const spotlight = (postArray.find(post => post[1].path.includes("future-proofing-research")))[1]
 
   // Spotlight effect (https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/) 
   let m = { x: 0, y: 0 };
