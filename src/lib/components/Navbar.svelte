@@ -1,0 +1,15 @@
+<script>
+    import GithubIcon from '$lib/components/svg/github-icon.svelte'
+    import LinkedinIcon from '$lib/components/svg/linkedin-icon.svelte';
+</script>
+
+<nav class="flex flex-row flex-nowrap justify-between px-4 md:px-8 text-base text-base-100 bg-black">
+<div class="flex items-center justify-start py-4">
+  <h1 class="font-semibold"><a href="/">Koen&nbsp;Raijer</a></h1>
+</div>
+<div class="flex items-center space-between">
+    <a class="pr-3" target="_blank" aria-label="Github" rel="noopener" href="https://github.com/koenraijer/"><GithubIcon/></a>
+    <a target="_blank" aria-label="LinkedIn" rel="noopener" href="https://www.linkedin.com/in/koen-raijer-3495a7127/"><LinkedinIcon/></a>
+</div>
+</nav>
+  
