@@ -16,9 +16,11 @@
         - Lazy loading using an Intersection Observer, inspired by (https://github.com/alexstaroselsky/svelte-lazy-image)
 - SEO has been dealt with using a Svelte store and the <svelte:head> component. 
 - Images have been optimized using Svelte Image (https://github.com/matyunya/svelte-image).
-
+- Lighthouse all 100!
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Add Utterances
 - Add Fathom analytics
+- Properly add placeholders for lazy loaded images.
+- Check why fullbleed isn't working.
 - Add base-200/300 based on greyscale not blueish bg.

@@ -10,6 +10,7 @@ layout: note
 ---
 <script>
     import Link from '$lib/components/markdown/Link.svelte'
+    import Image from '$lib/components/Image.svelte'
 </script>
 
 Today, I was reminded of something very important when it comes to programming. I've been in quarantine all week, spending most of my time on the rework for my personal website that you're reading this on right now. I'm really happy with how it turned out, but a couple of hours ago, I was extremely frustrated. Frustrated because my brand new website wouldn't deploy on Vercel. 
@@ -25,3 +26,6 @@ So I did, and everything went well. It took me under an hour to fix something I 
 I know, working on programming projects is *supposed* to be incremental. I basically came up with the obvious thing to do. Still, finding out the hard way may stop me from forgetting it.
 
 **P.S. <Link href="https://koenraijer-f1eek7b15-koenraijer.vercel.app/">Permalink to the old design</Link>
+
+**P.P.S** 🎉🎉🎉
+<Image src="/lighthouse.png" alt="Perfect Lighthouse scores!" halfbleed />
