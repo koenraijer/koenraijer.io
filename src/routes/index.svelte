@@ -176,7 +176,7 @@
                   <div class="flex flex-row row-nowrap">
                       <h2 class="text-lg font-[500] group-hover:underline">
                           {#if post[1].meta.category === "tutorial"}
-                              <div class="badge badge-primary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                              <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else if post[1].meta.category === "essay"}
                               <div class="badge badge-secondary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else if post[1].meta.category === "note"}
