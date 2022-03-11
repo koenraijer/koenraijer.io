@@ -8,6 +8,9 @@ tags:
 category: note
 layout: note
 ---
+<script>
+    import Link from '$lib/components/markdown/Link.svelte'
+</script>
 
 Today, I was reminded of something very important when it comes to programming. I've been in quarantine all week, spending most of my time on the rework for my personal website that you're reading this on right now. I'm really happy with how it turned out, but a couple of hours ago, I was extremely frustrated. Frustrated because my brand new website wouldn't deploy on Vercel. 
 
@@ -20,3 +23,5 @@ So I went to the gym, as I had planned, and that relaxed me a bit. Walking back 
 So I did, and everything went well. It took me under an hour to fix something I had previously spent more than a day. Not by solving the actual problem, but by **ignoring** the problem. 
 
 I know, working on programming projects is *supposed* to be incremental. I basically came up with the obvious thing to do. Still, finding out the hard way may stop me from forgetting it.
+
+**P.S. <Link href="https://koenraijer-f1eek7b15-koenraijer.vercel.app/">Permalink to the old design</Link>
