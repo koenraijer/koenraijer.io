@@ -149,19 +149,19 @@
   <span>Filter:</span>
   
   <div class="inline-flex" role="group">
-      <label class="p-[0.375rem] border rounded-l-lg border-gray-400 {essay ? "bg-base-200" : "bg-base-100"}" for="essay">
+      <label class="p-[0.375rem] border rounded-l-lg border-gray-400 {essay ? "bg-gray-200" : "bg-gray-100"}" for="essay">
           <input type="checkbox" name="essay" id="essay" class="hidden" bind:checked={essay}>
           Essays
       </label>
-      <label class="p-[0.375rem] border-gray-400 border-y {tutorial ? "bg-base-200" : "bg-base-100"}" for="snippet">
+      <label class="p-[0.375rem] border-gray-400 border-y {tutorial ? "bg-gray-200" : "bg-gray-100"}" for="snippet">
           <input type="checkbox" name="snippet" id="snippet" class="hidden" bind:checked={tutorial}>
           Tutorials
       </label>
-      <label class="p-[0.375rem] border-gray-400 border-y border-l {snippet ? "bg-base-200" : "bg-base-100"}" for="tutorial">
+      <label class="p-[0.375rem] border-gray-400 border-y border-l {snippet ? "bg-gray-200" : "bg-gray-100"}" for="tutorial">
           <input type="checkbox" name="tutorial" id="tutorial" class="hidden" bind:checked={snippet}>
           Snippets
       </label>
-      <label class="p-[0.375rem] border-gray-400 border rounded-r-lg {note ? "bg-base-200" : "bg-base-100"}" for="note">
+      <label class="p-[0.375rem] border-gray-400 border rounded-r-lg {note ? "bg-gray-200" : "bg-gray-100"}" for="note">
           <input type="checkbox" name="note" id="note" class="hidden" bind:checked={note}>
           Notes
       </label>

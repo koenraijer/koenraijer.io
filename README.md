@@ -20,3 +20,5 @@
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Add Utterances
+- Add Fathom analytics
+- Add base-200/300 based on greyscale not blueish bg.
