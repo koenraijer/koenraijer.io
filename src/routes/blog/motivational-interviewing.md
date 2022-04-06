@@ -28,9 +28,9 @@ Motivational Interviewing is a counseling method developed by Miller & Rodnick, 
 
 ## *OARS*: 4 strategies to apply key principles
 - Open ended questions
-- Affirmations that reframe behavior and concerns as positive client qualities.
+- Affirmations help reframe behavior and concerns as positive qualities.
 - Reflections help express empathy and develop discrepancy by strategically mentioning information.
-- Summaries do the same, and can also be used for structuring conversation and prevent resistance. 
+- Summaries do the same thing, while also providing a way to structure a conversation and prevent resistance. 
 
 ## *DARN-CAT:* listen for signs of Change Talk
 ### Preparatory signs
