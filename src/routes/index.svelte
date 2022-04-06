@@ -115,7 +115,7 @@
       <h2 class="text-xl font-bold pb-4">Spotlight</h2>
     </div>
     <div on:mousemove={handleMousemove} bind:this={div} on:focus={() => spotlightVisible = true} on:mouseover={() => spotlightVisible = true} on:mouseout={() => spotlightVisible = false} on:blur={() => spotlightVisible = false} class="grid grid-cols-1 relative gap-4 mb-12 md:mb-16 overflow-hidden">
-            <a class="group rounded-lg w-full bg-gradient-to-r p-2 from-primary to-primary overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
+            <a class="group rounded-lg w-full bg-gradient-to-r p-2 from-secondary to-secondary-focus via-secondary-focus overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
                 <div class="bg-base-100 rounded-md p-4 flex flex-col flex-nowrap justify-between h-full">
                   <div class="p-4">
                     <h2 class="text-lg group-hover:underline font-semibold pb-2 md:pb-4">{spotlight.meta.title}</h2>
@@ -143,7 +143,7 @@
       <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
       </div>
-      <input bind:value={searchTerm} type="text" id="search-icon" class="block p-2 pl-10 w-full bg-base-100 placeholder:text-neutral rounded-lg border focus:placeholder:text-base-300 border-2 outline-none hover:border-base-content border-base-300 focus:border-base-content" placeholder="Search posts">
+      <input autofocus bind:value={searchTerm} type="text" id="search-icon" class="block p-2 pl-10 w-full bg-base-100 placeholder:text-neutral rounded-lg focus:placeholder:text-gray-300 border-2 border-gray-400 outline-none hover:border-base-content focus:border-base-content" placeholder="Search posts">
   </div>
 
   <span>Filter:</span>

@@ -49,7 +49,7 @@
   
   <svelte:window on:scroll={setActiveHeading} />
   
-  <nav class="border-2 border-black rounded-lg mb-8 md:mb-12 not-prose w-fit p-4">
+  <nav class="border-2 border-gray-300 rounded-md mb-8 md:mb-12 not-prose w-fit p-4">
     <h4 id="__sections" class="text-base text-base-content pt-0 mt-0 font-[500]">
         Table of Contents
     </h4>
@@ -57,7 +57,7 @@
     <ul class="!pl-0">
     {#each headings as heading}
         <li
-        class="heading list-none my-2 !pl-0 text-sm font-normal transition-all"
+        class="heading list-none my-1 !pl-0 text-sm font-normal transition-all"
         class:active={activeHeading?.node === heading.node}
         style={`--depth: ${heading.depth}`}
         >

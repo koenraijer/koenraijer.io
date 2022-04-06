@@ -20,7 +20,9 @@
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Add Utterances
-- Add Fathom analytics
 - Properly add placeholders for lazy loaded images.
 - Check why fullbleed isn't working.
 - Add base-200/300 based on greyscale not blueish bg.
+- Add scroll to top on scroll up (https://webjeda.com/blog/intelligent-navbar, also a svelte package, forgot the exact name.
+- Add analytics with Goatcounter
+- Make link in endpoint post not external. 
