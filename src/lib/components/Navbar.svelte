@@ -3,7 +3,7 @@
     import LinkedinIcon from '$lib/components/svg/linkedin-icon.svelte';
 </script>
 
-<nav class="flex flex-row flex-nowrap justify-between px-4 md:px-8 text-base text-base-100 bg-black">
+<nav class="flex flex-row flex-nowrap justify-between px-4 md:px-8 text-base text-base-100 bg-slate-900">
 <div class="flex items-center justify-start py-4">
   <h1 class="font-normal text-lg"><a href="/">Koen&nbsp;Raijer</a></h1>
 </div>

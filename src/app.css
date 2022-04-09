@@ -8,4 +8,12 @@
 		@apply bg-secondary;
 	}
 
+	.collapse-title, .collapse > input[type="checkbox"] {
+		@apply min-h-fit;
+	}
+
+	.collapse-arrow .collapse-title::after {
+		top: 1em;
+	}
+
 }

@@ -52,7 +52,7 @@
   let amountLoaded = 50;
 
   // Spotlight post finder
-  const spotlight = (postArray.find(post => post[1].path.includes("future-proofing-research")))[1]
+  const spotlight = (postArray.find(post => post[1].path.includes("iterate-iterate-iterate")))[1]
 
   // Spotlight effect (https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/) 
   let m = { x: 0, y: 0 };
@@ -106,16 +106,13 @@
   <section class="text-lg pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-4 items-center">
     <div class="col-span-3 row-start-2 sm:row-start-1">
       <h1 class="text-4xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
-      <h2 class="text-base">I'm a medicine student who dabbles in web development and data science. Currently building <Link href="https://studio.koenraijer.io">websites for charity</Link>. Find me on <Link href="https://github.com/koenraijer/">Github</Link> or <Link href="https://www.linkedin.com/in/koen-raijer-3495a7127/">LinkedIn</Link>.</h2>
+      <h2 class="text-base">I'm a medicine student who dabbles in web development and data science. Currently building <Link href="https://studio.koenraijer.io">websites for charity</Link>. Trying to practice <i>learning in public</i>.</h2>
     </div>
     <img height="150" width="150" alt="Avatar of Koen" class="rounded-full aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar.webp">
   </section>
   <section>
-    <div class="pt-4 md:pt-8">
-      <h2 class="text-xl font-bold pb-4">Spotlight</h2>
-    </div>
     <div on:mousemove={handleMousemove} bind:this={div} on:focus={() => spotlightVisible = true} on:mouseover={() => spotlightVisible = true} on:mouseout={() => spotlightVisible = false} on:blur={() => spotlightVisible = false} class="grid grid-cols-1 relative gap-4 mb-12 md:mb-16 overflow-hidden">
-            <a class="group rounded-lg w-full bg-gradient-to-r p-2 from-secondary to-secondary-focus via-secondary-focus overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
+            <a class="group rounded-lg w-full bg-gradient-to-r p-2 from-primary-content to-primary-content overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
                 <div class="bg-base-100 rounded-md p-4 flex flex-col flex-nowrap justify-between h-full">
                   <div class="p-4">
                     <h2 class="text-lg group-hover:underline font-semibold pb-2 md:pb-4">{spotlight.meta.title}</h2>
@@ -137,8 +134,8 @@
     </div>
   </section>
 
-  <h2 class="text-3xl font-bold mb-4">All content, nice and tidy.</h2>
-  <h2>I've written a humble total of <div class="badge badge-secondary">{posts.length}</div> essays, notes, tutorials and snippets.</h2>
+  <h2 class="text-3xl font-bold mb-4">All content, <i>nice and tidy</i>.</h2>
+  <h2>I've written <div class="badge badge-secondary">{posts.length}</div> essays, notes, tutorials and snippets.</h2>
   <div class="relative w-full my-4">
       <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>

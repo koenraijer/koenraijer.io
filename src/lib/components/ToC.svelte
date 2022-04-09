@@ -49,15 +49,17 @@
   
   <svelte:window on:scroll={setActiveHeading} />
   
-  <nav class="border-2 border-gray-300 rounded-md mb-8 md:mb-12 not-prose w-fit p-4">
-    <h4 id="__sections" class="text-base text-base-content pt-0 mt-0 font-[500]">
+  <nav tabindex="0" class="collapse collapse-arrow border-2 border-gray-300 rounded-md mb-8 md:mb-12 not-prose p-4 py-2 min-w-[50%]">
+    <input type="checkbox" class="m-0 p-0 min-h-fit"> 
+
+    <div id="__sections" class="collapse-title text-base text-base-content font-[500] p-0 m-0">
         Table of Contents
-    </h4>
+    </div>
       
-    <ul class="!pl-0">
+    <ul class="!pl-0 translate-y-2 collapse-content">
     {#each headings as heading}
         <li
-        class="heading list-none my-1 !pl-0 text-sm font-normal transition-all"
+        class="heading list-none my-1 !pl-4 text-sm font-normal transition-all"
         class:active={activeHeading?.node === heading.node}
         style={`--depth: ${heading.depth}`}
         >
@@ -67,7 +69,6 @@
     </ul>
   </nav>
 
-  
   <style>
       /*
       .active {

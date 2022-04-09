@@ -59,7 +59,7 @@ const config = {
                 "accent": "#F471B5",
                 "neutral": "#1E293B",
                 "neutral-focus": "#273449",
-                "base-100": "#F8F8FF",
+                "base-100": "#FFF",
                 "info": "#0CA5E9",
                 "success": "#CAFF57", // Actually tertiary!
                 "warning": "#F4BF50",

@@ -1,6 +1,6 @@
 ---
 title: Iterate, Iterate, Iterate
-subtitle: I learned the hard way, again...
+subtitle: "I learned the hard way, again... So: make regular commits, test frequently."
 date: "2022-03-10"
 updated: "2022-03-10"
 tags:
