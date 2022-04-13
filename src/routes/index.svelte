@@ -102,17 +102,17 @@
 	<link rel="preload" href="/avatar.webp" as="image">
 </svelte:head>
 
-<div class="max-w-[70ch] mx-auto px-4 md:px-8 py-8">
+<div class="max-w-[80ch] mx-auto px-6 md:px-8 py-8 pb-0">
   <section class="text-lg pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-4 items-center">
     <div class="col-span-3 row-start-2 sm:row-start-1">
-      <h1 class="text-4xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
-      <h2 class="text-base">I'm a medicine student who dabbles in web development and data science. Currently building <Link href="https://studio.koenraijer.io">websites for charity</Link>. Trying to practice <i>learning in public</i>.</h2>
+      <h1 class="text-5xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
+      <h2 class="text-base">I'm a medicine student who dabbles in computer science, learning stuff in public. Currently building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
     </div>
     <img height="150" width="150" alt="Avatar of Koen" class="rounded-full aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar.webp">
   </section>
-  <section>
+  <section class="hidden">
     <div on:mousemove={handleMousemove} bind:this={div} on:focus={() => spotlightVisible = true} on:mouseover={() => spotlightVisible = true} on:mouseout={() => spotlightVisible = false} on:blur={() => spotlightVisible = false} class="grid grid-cols-1 relative gap-4 mb-12 md:mb-16 overflow-hidden">
-            <a class="group rounded-lg w-full bg-gradient-to-r p-2 from-primary-content to-primary-content overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
+            <a class="group rounded-lg w-full bg-gradient-to-r sm:p-3 p-2 from-primary-content to-primary-content overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
                 <div class="bg-base-100 rounded-md p-4 flex flex-col flex-nowrap justify-between h-full">
                   <div class="p-4">
                     <h2 class="text-lg group-hover:underline font-semibold pb-2 md:pb-4">{spotlight.meta.title}</h2>
@@ -134,9 +134,9 @@
     </div>
   </section>
 
-  <h2 class="text-3xl font-bold mb-4">All content, <i>nice and tidy</i>.</h2>
-  <h2>I've written <div class="badge badge-secondary">{posts.length}</div> essays, notes, tutorials and snippets.</h2>
-  <div class="relative w-full my-4">
+  <h2 class="text-3xl font-semibold mb-4">Latest posts</h2>
+  <h3 class="text-base-content">I've written <div class="badge badge-secondary">{posts.length}</div> essays, notes, tutorials and snippets.</h3>
+  <div class="relative w-full my-4 mt-2">
       <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
       </div>
@@ -165,19 +165,19 @@
   </div>
 
 
-  <div class="flex flex-col justify-between flex-nowrap my-8 gap-y-8">
-      <div class="grid grid-cols-1 gap-y-8">
+  <div class="flex flex-col justify-between flex-nowrap my-8 mt-12 gap-y-8">
+      <div class="grid grid-cols-1 gap-y-10">
           {#if searchedPosts.length}
           {#each searchedPosts as post}
               <a class="group w-full grid grid-cols-1 gap-y-2" href="{post[1].path}" sveltekit:prefetch>
                   <div class="flex flex-row row-nowrap">
-                      <h2 class="text-lg font-[500] group-hover:underline">
+                      <h2 class="text-xl font-[500] group-hover:underline">
                           {#if post[1].meta.category === "tutorial"}
                               <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else if post[1].meta.category === "essay"}
                               <div class="badge badge-secondary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else if post[1].meta.category === "note"}
-                              <div class="badge badge-success py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                              <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else if post[1].meta.category === "snippet"}
                               <div class="badge badge-accent py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
                           {:else}
@@ -187,8 +187,9 @@
                       </h2>
                   </div>
   
-                  <h2 class="text-sm">{post[1].meta.subtitle}</h2>
-                  <time class="text-sm inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline">
+                  <h2 class="text-base leading-none">{post[1].meta.subtitle}</h2>
+                  <time class="text-sm mb-4 inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline">
+                  <hr>
               </a>
           {/each}
           {:else}
