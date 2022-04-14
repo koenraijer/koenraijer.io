@@ -7,6 +7,7 @@
 <script>
     import ToC from "$lib/components/ToC.svelte";
     import {seo} from '$lib/stores'
+    import Giscus from '@giscus/svelte'
     export let title
     export let subtitle
     export let date
@@ -26,11 +27,28 @@
 	<meta name="twitter:title" content={title} />
 </svelte:head>
 
-<article class="relative text-base max-w-[55ch] mx-auto px-4 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
+<article class="relative text-base max-w-[60ch] mx-auto px-4 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
   <time class="text-sm" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. <span class="text-sm italic">Updated: </span><time class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. 
   <h1 class="pb-4 font-[500]">{title}</h1>
 
   <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
   
   <slot></slot>
+
+  <div class="max-w-[60ch] mx-auto">
+    <h2>Comments</h2>
+    <Giscus
+    repo="koenraijer/utterances"
+    repoId="R_kgDOHLAsiQ"
+    category="Announcements"
+    categoryId="DIC_kwDOHLAsic4COjlc"
+    mapping="url"
+    term="Welcome to @giscus/svelte component!"
+    reactionsEnabled="1"
+    emitMetadata="0"
+    inputPosition="top"
+    theme="light"
+    lang="en"
+    />
+</div>
 </article>

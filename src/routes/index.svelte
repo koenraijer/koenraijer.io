@@ -14,7 +14,6 @@
   import Link from '$lib/components/markdown/Link.svelte';
   import {seo} from '$lib/stores'
   export let posts;
-
   let searchTerm = '';
 
   let essay;
@@ -168,28 +167,36 @@
   <div class="flex flex-col justify-between flex-nowrap my-8 mt-12 gap-y-8">
       <div class="grid grid-cols-1 gap-y-10">
           {#if searchedPosts.length}
-          {#each searchedPosts as post}
-              <a class="group w-full grid grid-cols-1 gap-y-2" href="{post[1].path}" sveltekit:prefetch>
+          {#each searchedPosts as post, index}
+              <a class="group w-full grid {post[1].meta.image ? "grid-cols-4" : "grid-cols-1"} gap-y-2 gap-x-2" href="{post[1].path}" sveltekit:prefetch>
+                <div class="col-span-3">
                   <div class="flex flex-row row-nowrap">
-                      <h2 class="text-xl font-[500] group-hover:underline">
-                          {#if post[1].meta.category === "tutorial"}
-                              <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
-                          {:else if post[1].meta.category === "essay"}
-                              <div class="badge badge-secondary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                          {:else if post[1].meta.category === "note"}
-                              <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                          {:else if post[1].meta.category === "snippet"}
-                              <div class="badge badge-accent py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                          {:else}
-                              <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                          {/if}
-                          {post[1].meta.title}
-                      </h2>
+                    <h2 class="text-xl font-[500] group-hover:underline">
+                        {#if post[1].meta.category === "tutorial"}
+                            <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
+                        {:else if post[1].meta.category === "essay"}
+                            <div class="badge badge-secondary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                        {:else if post[1].meta.category === "note"}
+                            <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                        {:else if post[1].meta.category === "snippet"}
+                            <div class="badge badge-accent py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                        {:else}
+                            <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
+                        {/if}
+                        {post[1].meta.title}
+                    </h2>
                   </div>
-  
-                  <h2 class="text-base leading-none">{post[1].meta.subtitle}</h2>
-                  <time class="text-sm mb-4 inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline">
-                  <hr>
+                  <h2 class="text-base leading-snug my-2">{post[1].meta.subtitle}</h2>
+                  <time class="text-sm mb-6 inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline"> 
+                </div>
+
+                  {#if post[1].meta.image}
+                    <img class="h-full w-auto rounded object-contain aspect-auto max-h-32" alt="Banner image for '{post[1].meta.title}'" src="{post[1].meta.image}">
+                  {/if}
+
+                  {#if searchedPosts.length - 1 !== index}
+                  <hr class="col-span-4">
+                  {/if}
               </a>
           {/each}
           {:else}
@@ -197,7 +204,7 @@
           {/if}
       </div>
       {#if posts.length > amountLoaded}
-          <button on:click={() => amountLoaded+=50} class="btn btn-outline">Load more</button>
+          <button on:click={() => amountLoaded+=50} class="p-4 py-2 mt-4 font-[500] border-gray-400 border bg-gray-200 rounded hover:bg-gray-100 mx-auto w-fit">Load more</button>
       {/if}
   </div>
 </div>

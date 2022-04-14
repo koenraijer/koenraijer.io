@@ -48,7 +48,7 @@
 	<Navbar />
 
 	{#key currentRoute}
-		<main class="flex-grow py-16" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
+		<main class="flex-grow py-8 md:py-16" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
 			<slot />
 		</main>
 	{/key}
@@ -56,8 +56,3 @@
 	<Footer />
 </div>
 
-<style>
-	::selection {
-	background-color: red;
-	}
-</style>

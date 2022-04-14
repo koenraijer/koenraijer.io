@@ -7,7 +7,7 @@ tags:
     - Tag 1
 category: tutorial
 layout: post
-
+image: '/endnote_logo.png'
 ---
 <script>
     import Link from '$lib/components/markdown/Link.svelte'

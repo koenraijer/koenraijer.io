@@ -16,4 +16,12 @@
 		top: 1em;
 	}
 
+	.footnotes {
+		font-size: .9rem;
+		@apply mt-0 pt-0 pb-12 mb-12
+	}
+
+	hr {
+		@apply bg-gray-200 h-[2px]
+	}
 }

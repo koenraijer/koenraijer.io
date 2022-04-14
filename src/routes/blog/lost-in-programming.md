@@ -7,6 +7,7 @@ tags:
     - Programming
 category: essay
 layout: post
+image: "/rebalancingCalculator.gif"
 ---
 <script>
     import Image from '$lib/components/Image.svelte'
