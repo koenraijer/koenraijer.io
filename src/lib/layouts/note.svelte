@@ -8,6 +8,8 @@
       export let title
       export let date
       export let updated
+      import Giscus from '@giscus/svelte'
+
   </script>
   
   <svelte:head>
@@ -29,4 +31,19 @@
   
       <slot></slot>
 
+  <div class="max-w-[60ch] mx-auto">
+    <Giscus
+    repo="koenraijer/utterances"
+    repoId="R_kgDOHLAsiQ"
+    category="Announcements"
+    categoryId="DIC_kwDOHLAsic4COjlc"
+    mapping="url"
+    term="Welcome to @giscus/svelte component!"
+    reactionsEnabled="1"
+    emitMetadata="0"
+    inputPosition="top"
+    theme="light"
+    lang="en"
+    />
+</div>
   </article>

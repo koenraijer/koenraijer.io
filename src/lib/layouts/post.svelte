@@ -36,7 +36,6 @@
   <slot></slot>
 
   <div class="max-w-[60ch] mx-auto">
-    <h2>Comments</h2>
     <Giscus
     repo="koenraijer/utterances"
     repoId="R_kgDOHLAsiQ"
