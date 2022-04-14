@@ -30,10 +30,3 @@
       <slot></slot>
 
   </article>
-
-  <style>
-    .footnotes ol li {
-      font-size: 2rem;
-    }
-  </style>
-  

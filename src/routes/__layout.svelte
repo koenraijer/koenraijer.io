@@ -39,6 +39,9 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
 
+	<!--GoatCounter-->
+	<script data-goatcounter="https://koenraijer.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+	
 	<!--Preloading-->
 	<link rel="preload" href="/avatar.webp" as="image">
 </svelte:head>

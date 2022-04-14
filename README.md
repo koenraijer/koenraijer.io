@@ -18,7 +18,7 @@
 - Images have been optimized using Svelte Image (https://github.com/matyunya/svelte-image).
 - Lighthouse all 100!
 - Uses Giscus/Github Discussions as comments.
-- Goatcounter analytics.
+- Privacy-proof, free analytics using GoatCounter.
 
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
