@@ -23,5 +23,5 @@
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Properly add placeholders for lazy loaded images.
-- Add analytics with Goatcounter
 - Make link in endpoint post not external. 
+- Add Spotify API integration like https://leerob.io/blog/spotify-api-nextjs, https://leerob.io/snippets/spotify-top-tracks  

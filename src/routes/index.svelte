@@ -1,7 +1,6 @@
 <script context="module">
     export const load = async ({ fetch }) => {
       const posts = await fetch('/api/blog.json').then((response => response.json()))
-
       return {
         props: {
            posts
@@ -12,6 +11,7 @@
 
 <script>
   import Link from '$lib/components/markdown/Link.svelte';
+  import NowPlaying from '$lib/components/NowPlaying.svelte';
   import {seo} from '$lib/stores'
   export let posts;
   let searchTerm = '';
@@ -106,6 +106,9 @@
     <div class="col-span-3 row-start-2 sm:row-start-1">
       <h1 class="text-5xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
       <h2 class="text-base">I'm a medicine student who dabbles in computer science, learning stuff in public. Currently building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
+      <div class="py-2">
+        <NowPlaying/>
+      </div>
     </div>
     <img height="150" width="150" alt="Avatar of Koen" class="rounded-full aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar.webp">
   </section>
@@ -133,8 +136,8 @@
     </div>
   </section>
 
-  <h2 class="text-3xl font-semibold mb-4">Latest posts</h2>
-  <h3 class="text-base-content">I've written <div class="badge badge-secondary">{posts.length}</div> essays, notes, tutorials and snippets.</h3>
+  <h2 class="text-3xl font-semibold mb-2">Latest posts</h2>
+  <h3 class="text-gray-500">I've written <div class="inline">{posts.length}</div> essays, notes, tutorials and snippets.</h3>
   <div class="relative w-full my-4 mt-2">
       <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
@@ -145,19 +148,19 @@
   <span>Filter:</span>
   
   <div class="inline-flex" role="group">
-      <label class="p-[0.375rem] border rounded-l-lg border-gray-400 {essay ? "bg-gray-200" : "bg-gray-100"}" for="essay">
+      <label class="py-1 px-2 border rounded-l-lg border-gray-400 {essay ? "bg-gray-200" : "bg-gray-100"}" for="essay">
           <input type="checkbox" name="essay" id="essay" class="hidden" bind:checked={essay}>
           Essays
       </label>
-      <label class="p-[0.375rem] border-gray-400 border-y {tutorial ? "bg-gray-200" : "bg-gray-100"}" for="snippet">
+      <label class="py-1 px-2 border-gray-400 border-y {tutorial ? "bg-gray-200" : "bg-gray-100"}" for="snippet">
           <input type="checkbox" name="snippet" id="snippet" class="hidden" bind:checked={tutorial}>
           Tutorials
       </label>
-      <label class="p-[0.375rem] border-gray-400 border-y border-l {snippet ? "bg-gray-200" : "bg-gray-100"}" for="tutorial">
+      <label class="py-1 px-2 border-gray-400 border-y border-l {snippet ? "bg-gray-200" : "bg-gray-100"}" for="tutorial">
           <input type="checkbox" name="tutorial" id="tutorial" class="hidden" bind:checked={snippet}>
           Snippets
       </label>
-      <label class="p-[0.375rem] border-gray-400 border rounded-r-lg {note ? "bg-gray-200" : "bg-gray-100"}" for="note">
+      <label class="py-1 px-2 border-gray-400 border rounded-r-lg {note ? "bg-gray-200" : "bg-gray-100"}" for="note">
           <input type="checkbox" name="note" id="note" class="hidden" bind:checked={note}>
           Notes
       </label>
@@ -208,3 +211,5 @@
       {/if}
   </div>
 </div>
+
+
