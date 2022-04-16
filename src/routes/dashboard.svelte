@@ -15,16 +15,19 @@
  
     <h1 class="text-3xl max-w-[50ch] mb-2 text-base">Top tracks</h1>
     <p class="mb-8">Curious what I'm currently jamming to? Here's my top tracks on Spotify updated daily.</p>
-    <ol class="list-decimal !pl-0 mx-auto">
-    {#each top_tracks.top_tracks as track, index}
-        <li class="flex flex-col flex-nowrap justify-start !my-0">
-            <a class="font-semibold text-lg" href={track.external_urls.spotify} rel="noopener noreferrer" target="_blank">{index + 1}. {track.name}</a> 
-            <span>{track.artists[0].name}</span>
+    
+    <div>
+        {#each top_tracks.top_tracks as track, index}
+            <div class="grid grid-cols-4 content-start">
+                <div class="col-span-3">
+                    <a class="font-semibold text-lg" href={track.external_urls.spotify} rel="noopener noreferrer" target="_blank">{index + 1}. {track.name}</a> 
+                    <span>{track.artists[0].name}</span>
+                </div>
+                <img class="my-0 mb-4 mt-2 h-20 w-20" alt="{track.name}'s album cover" height={track.album.images[1].height} width={track.album.images[1].width} src={track.album.images[1].url}>
+            </div>
             <hr class="mt-2 mb-8">
-        </li>
-
-    {/each}
-    </ol>
+        {/each}
+    </div>
 
 </article>
 
