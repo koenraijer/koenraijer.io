@@ -106,7 +106,7 @@
     <div class="col-span-3 row-start-2 sm:row-start-1">
       <h1 class="text-5xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
       <h2 class="text-base">I'm a medicine student who dabbles in computer science, learning stuff in public. Currently building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
-      <div class="py-2">
+      <div class="py-4">
         <NowPlaying/>
       </div>
     </div>
@@ -142,6 +142,7 @@
       <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
       </div>
+      <!-- svelte-ignore a11y-autofocus -->
       <input autofocus bind:value={searchTerm} type="text" id="search-icon" class="block p-2 pl-10 w-full bg-base-100 placeholder:text-neutral rounded-lg focus:placeholder:text-gray-300 border-2 border-gray-400 outline-none hover:border-base-content focus:border-base-content" placeholder="Search posts">
   </div>
 
