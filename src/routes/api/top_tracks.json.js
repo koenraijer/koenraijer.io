@@ -2,7 +2,7 @@
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
 
 export async function get() {
-    const {access_token, expires_in} = await fetch('http://localhost:3000/api/access_token.json', {
+    const {access_token, expires_in} = await fetch('https://www.koenraijer.io/api/access_token.json', {
         method: 'POST',
     }).then(res => res.json())
   
