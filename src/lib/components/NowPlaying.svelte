@@ -1,10 +1,12 @@
 <script>
     import {onMount} from 'svelte';
-
+    import { browser } from '$app/env';
+    
     let song = {}
 
     onMount(async () => {
-        song = await fetch('/api/now_playing.json').then(res => res.json())
+        if(browser)
+            song = await fetch('/api/now_playing.json').then(res => res.json())
     })
 </script>
 
