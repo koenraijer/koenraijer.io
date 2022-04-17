@@ -4,17 +4,18 @@
     let song = {}
 
     async function getNowPlaying() {
-        song = await fetch('https://www.koenraijer.io/api/now_playing.json').then(res => res.json())
+        song = await fetch('/api/now_playing.json').then(res => res.json())
     }
 
     onMount(async () => {
             getNowPlaying();
     })
 
+    
     setInterval(() => {
         getNowPlaying();
     }, 5000);
-
+    
     /*
     $: request_timer = song.duration_ms - song.progress_ms // See what's left of a song before making another API call. 
 

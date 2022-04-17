@@ -11,7 +11,6 @@ export async function get() {
     method: 'POST',
   }).then(res => res.json())
   
-  console.log(access_token)
   const res = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
     Authorization: `Bearer ${access_token}`
