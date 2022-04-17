@@ -12,6 +12,8 @@
 <script>
   import Link from '$lib/components/markdown/Link.svelte';
   import NowPlaying from '$lib/components/NowPlaying.svelte';
+import PostCard from '$lib/components/PostCard.svelte';
+import Spotlight from '$lib/components/Spotlight.svelte';
   import {seo} from '$lib/stores'
   export let posts;
   let searchTerm = '';
@@ -51,31 +53,9 @@
   let amountLoaded = 50;
 
   // Spotlight post finder
-  const spotlight = (postArray.find(post => post[1].path.includes("iterate-iterate-iterate")))[1]
+  let spotlight = (postArray.find(post => post[1].path.includes("iterate-iterate-iterate")))[1]
 
-  // Spotlight effect (https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/) 
-  let m = { x: 0, y: 0 };
-	let cx;
-  let cy;
-  let svg;
-  let div;
-  let spotlightVisible = false;
-
-	function handleMousemove(event) {
-    // Get mouse coordinates
-		m.x = event.clientX;
-		m.y = event.clientY;
-
-    // Translate to SVG coordinates
-    const pt = svg.createSVGPoint();
-    pt.x = m.x
-    pt.y = m.y
-
-    const svgP = pt.matrixTransform(svg.getScreenCTM().inverse())
-
-    cx = svgP.x
-    cy = svgP.y
-	}
+ 
 	
 </script>
 
@@ -111,29 +91,6 @@
       </div>
     </div>
     <img height="150" width="150" alt="Avatar of Koen" class="rounded-full aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar.webp">
-  </section>
-  <section class="hidden">
-    <div on:mousemove={handleMousemove} bind:this={div} on:focus={() => spotlightVisible = true} on:mouseover={() => spotlightVisible = true} on:mouseout={() => spotlightVisible = false} on:blur={() => spotlightVisible = false} class="grid grid-cols-1 relative gap-4 mb-12 md:mb-16 overflow-hidden">
-            <a class="group rounded-lg w-full bg-gradient-to-r sm:p-3 p-2 from-primary-content to-primary-content overflow-hidden grid items-stretch" href="{spotlight.path}" sveltekit:prefetch>
-                <div class="bg-base-100 rounded-md p-4 flex flex-col flex-nowrap justify-between h-full">
-                  <div class="p-4">
-                    <h2 class="text-lg group-hover:underline font-semibold pb-2 md:pb-4">{spotlight.meta.title}</h2>
-                    <p class="text-base pb-4 md:pb-6">{spotlight.meta.subtitle}</p>
-                    <span class="text-sm text-neutral-content justify-end">{new Date(spotlight.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                  </div>
-                </div>
-            </a>
-
-            <svg bind:this={svg} class="absolute pointer-events-none" width="150%" height="150%" viewBox="0 0 100 100">
-              <defs>
-                <radialGradient id="grad" fx="0.5" fy="0.5" r="1" >
-                  <stop stop-opacity="1" style="stop-color:#ffffff80" offset="0"/>
-                  <stop stop-opacity="0" style="stop-color:#ffffff80" offset="0.3"/>
-                </radialGradient>
-              </defs>
-              <circle r="75px" fill="url(#grad)" class="{spotlightVisible ? "opacity-1" : "opacity-0"} transition-opacity" {cx} {cy}></circle>
-            </svg>
-    </div>
   </section>
 
   <h2 class="text-3xl font-semibold mb-2">Latest posts</h2>
@@ -172,36 +129,7 @@
       <div class="grid grid-cols-1 gap-y-10">
           {#if searchedPosts.length}
           {#each searchedPosts as post, index}
-              <a class="group w-full grid {post[1].meta.image ? "grid-cols-4" : "grid-cols-1"} gap-y-2 gap-x-2" href="{post[1].path}" sveltekit:prefetch>
-                <div class="col-span-3">
-                  <div class="flex flex-row row-nowrap">
-                    <h2 class="text-xl font-[500] group-hover:underline">
-                        {#if post[1].meta.category === "tutorial"}
-                            <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
-                        {:else if post[1].meta.category === "essay"}
-                            <div class="badge badge-secondary py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                        {:else if post[1].meta.category === "note"}
-                            <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                        {:else if post[1].meta.category === "snippet"}
-                            <div class="badge badge-accent py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                        {:else}
-                            <div class="badge badge-ghost py-3 mr-1 transform -translate-y-1">{post[1].meta.category}</div>
-                        {/if}
-                        {post[1].meta.title}
-                    </h2>
-                  </div>
-                  <h2 class="text-base leading-snug my-2">{post[1].meta.subtitle}</h2>
-                  <time class="text-sm mb-6 inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline"> 
-                </div>
-
-                  {#if post[1].meta.image}
-                    <img class="h-full w-auto rounded object-contain aspect-auto max-h-32" alt="Banner image for '{post[1].meta.title}'" src="{post[1].meta.image}">
-                  {/if}
-
-                  {#if searchedPosts.length - 1 !== index}
-                  <hr class="col-span-4">
-                  {/if}
-              </a>
+             <PostCard {post} {searchedPosts} {index}/>
           {/each}
           {:else}
           <h2 class="text-lg">Nothing found for "{searchTerm}"</h2>

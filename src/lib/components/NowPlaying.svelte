@@ -8,7 +8,7 @@
     })
 </script>
 
-<div class="text-sm w-fit text-gray-500 bg-gray-100  p-4 pl-5 py-2 rounded-lg">
+<div class="text-sm w-fit text-gray-500 bg-gray-100 border-2 p-4 pl-5 py-2 rounded-lg">
     {#if !song}
     <strong>Loading ...</strong> - <span class="text-gray-500">Spotify</span>
     {:else if song}
@@ -25,7 +25,7 @@
         {/if}
     {/if}
     <br>
-    <a href="/dashboard" class="text-xs flex justify-end text-right"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline-block bottom-0 translate-y-[0.45rem]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+    <a href="/dashboard" sveltekit:prefetch class="text-xs flex justify-end text-right"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline-block bottom-0 translate-y-[0.45rem]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
       </svg>Top tracks</a>
 </div>
