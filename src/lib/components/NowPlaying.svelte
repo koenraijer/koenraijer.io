@@ -1,11 +1,31 @@
 <script>
     import {onMount} from 'svelte';
-
+    
     let song = {}
 
+    async function getNowPlaying() {
+        song = await fetch('https://www.koenraijer.io/api/now_playing.json').then(res => res.json())
+    }
+
     onMount(async () => {
-            song = await fetch('/api/now_playing.json').then(res => res.json())
+            getNowPlaying();
     })
+
+    setInterval(() => {
+        getNowPlaying();
+    }, 2000);
+
+    /*
+    $: request_timer = song.duration_ms - song.progress_ms // See what's left of a song before making another API call. 
+
+    $: console.log(request_timer)
+    $: setTimeout(() => {getNowPlaying(), request_timer})
+    */
+    /* 
+    - If a song is playing, I want it to switch to stop playing when I stop playing without reloading the page.
+    - The response contains information on a) how far in the song I am, b) how much is still left. This allows me to determine when to make another request.
+    - The new request will say I stopped playing, or another song has started playing. If another song has started playing, I can repeat the same thing.
+    */
 </script>
 
 <div class="text-sm w-fit text-gray-500 bg-gray-100 border-2 p-4 pl-5 py-2 rounded-lg">

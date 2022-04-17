@@ -11,23 +11,24 @@ export async function get() {
     method: 'POST',
   }).then(res => res.json())
   
+  console.log(access_token)
   const res = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
     Authorization: `Bearer ${access_token}`
     }
   })
   
-  if (res.status === 204) { // Spotify returns 204 when there's nothing playing
+  if (res.status === 204 || res.status > 400) { // Spotify returns 204 when there's nothing playing
     return {
-      status: res.status,
+      status: 200,
       body: { isPlaying: false }}
-  } else if(!res.ok) {
-    return {
-      body: res.status
-    }
-  }
+  } 
+  
 
   const song = await res.json();
+
+  const progress_ms = song.progress_ms
+  const duration_ms = song.item.duration_ms
   const isPlaying = song.is_playing;
   const title = song.item.name;
   const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
@@ -36,7 +37,7 @@ export async function get() {
   const songUrl = song.item.external_urls.spotify;
 
   return {
-    body: {title, artist, album, isPlaying, albumImageUrl, songUrl},
+    body: {title, artist, album, isPlaying, albumImageUrl, songUrl, duration_ms, progress_ms},
   }
 }
 

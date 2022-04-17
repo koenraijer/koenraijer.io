@@ -12,8 +12,7 @@
 <script>
   import Link from '$lib/components/markdown/Link.svelte';
   import NowPlaying from '$lib/components/NowPlaying.svelte';
-import PostCard from '$lib/components/PostCard.svelte';
-import Spotlight from '$lib/components/Spotlight.svelte';
+  import PostCard from '$lib/components/PostCard.svelte';
   import {seo} from '$lib/stores'
   export let posts;
   let searchTerm = '';
