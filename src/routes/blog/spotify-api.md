@@ -17,7 +17,7 @@ layout: post
     import NowPlaying from '$lib/components/NowPlaying.svelte'
 </script>
 
-Ever since I saw <a href="https://leerob.io/">this implementation of the Spotify API in Next.js</a>, I've been wanting to do the same thing in SvelteKit. Knowing the song someone's listening to in that very moment makes an otherwise mostly static website feel pretty dynamic.
+Ever since I saw <a href="https://leerob.io/">this implementation of the Spotify API in Next.js</a> (check the footer), I've been wanting to do the same thing in SvelteKit. Knowing the song someone's listening to in that very moment makes an otherwise mostly static website feel pretty dynamic.
 
 So, I resumed my quest into the world of API's, requests and endpoints from where I left off: <a href="https://www.koenraijer.io/blog/svelteKit-endpoints">Fetching from a public API with SvelteKit Endpoints</a>.
 
