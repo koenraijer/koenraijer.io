@@ -10,7 +10,7 @@
 </script>
 
 <script>
-  import Link from '$lib/components/markdown/Link.svelte';
+  import Link from '$lib/components/markdown/A.svelte';
   import NowPlaying from '$lib/components/NowPlaying.svelte';
   import PostCard from '$lib/components/PostCard.svelte';
   import {seo} from '$lib/stores'
@@ -77,19 +77,17 @@
 	<link rel="manifest" href="/favicon/site.webmanifest">
 
 	<!--Preloading-->
-	<link rel="preload" href="/avatar.webp" as="image">
+	<link rel="preload" href="/avatar2.webp" as="image">
 </svelte:head>
 
-<div class="max-w-[80ch] mx-auto px-6 md:px-8 py-8 pb-0">
-  <section class="text-lg pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-4 items-center">
+<div class="max-w-[75ch] mx-auto px-6 md:px-8">
+
+  <section class="text-lg pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-end">
     <div class="col-span-3 row-start-2 sm:row-start-1">
-      <h1 class="text-5xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
-      <h2 class="text-base">I'm a medicine student who dabbles in computer science, learning stuff in public. Currently building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
-      <div class="py-4">
-        <NowPlaying/>
-      </div>
+        <h1 class="text-4xl font-semibold sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
+      <h2 class="text-base">I'm a medicine student who dabbles in web development and data science. Currently building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
     </div>
-    <img height="150" width="150" alt="Avatar of Koen" class="rounded-full aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar.webp">
+    <img height="200" width="200" alt="Avatar of Koen" class="mask mask-circle aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar2.webp">
   </section>
 
   <h2 class="text-3xl font-semibold mb-2">Latest posts</h2>
@@ -125,7 +123,7 @@
 
 
   <div class="flex flex-col justify-between flex-nowrap my-8 mt-12 gap-y-8">
-      <div class="grid grid-cols-1 gap-y-10">
+      <div class="grid grid-cols-1 gap-y-4">
           {#if searchedPosts.length}
           {#each searchedPosts as post, index}
              <PostCard {post} {searchedPosts} {index}/>

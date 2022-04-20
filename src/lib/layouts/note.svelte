@@ -25,25 +25,27 @@
 	<meta name="twitter:title" content={title} />
 </svelte:head>
 
-  <article class="max-w-[60ch] text-base mx-auto px-4 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
-    <time class="text-sm" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. <span class="text-sm italic">Updated: </span><time class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. 
-    <h1 class="pb-8 md:pb-12 font-[500]">{title}</h1>
-  
-      <slot></slot>
-
-  <div class="max-w-[60ch] mx-auto">
-    <Giscus
-    repo="koenraijer/utterances"
-    repoId="R_kgDOHLAsiQ"
-    category="Announcements"
-    categoryId="DIC_kwDOHLAsic4COjlc"
-    mapping="url"
-    term="Welcome to @giscus/svelte component!"
-    reactionsEnabled="1"
-    emitMetadata="0"
-    inputPosition="top"
-    theme="light"
-    lang="en"
-    />
-</div>
+  <article class="max-w-[75ch] mx-auto px-6 md:px-8">
+    <div class="text-base prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
+        <time class="text-sm" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. <span class="text-sm italic">Updated: </span><time class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>. 
+        <h1 class="pb-8 md:pb-12 font-[500]">{title}</h1>
+        <div class="text-base">
+          <slot></slot>
+        </div>
+      <div class="max-w-[60ch] mx-auto">
+        <Giscus
+        repo="koenraijer/utterances"
+        repoId="R_kgDOHLAsiQ"
+        category="Announcements"
+        categoryId="DIC_kwDOHLAsic4COjlc"
+        mapping="url"
+        term="Welcome to @giscus/svelte component!"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="top"
+        theme="light"
+        lang="en"
+        />
+    </div>
+    </div>
   </article>

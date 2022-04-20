@@ -24,4 +24,12 @@
 	hr {
 		@apply bg-gray-200 h-[2px]
 	}
+
+	.prose :not(:where(h1, h2, h3, h4, h5, h6)) :where(a):not(:where([class~="not-prose"] *)) {
+		@apply text-primary hover:underline
+	}
+
+	.prose :where(a):not(:where([class~="not-prose"] *)) {
+		@apply hover:underline
+	}
 }

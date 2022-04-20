@@ -11,12 +11,11 @@ layout: post
 ---
 
 <script>
-    import Link from '$lib/components/markdown/Link.svelte'
     import Image from '$lib/components/Image.svelte'
     import Blockquote from '$lib/components/markdown/Blockquote.svelte'
 </script>
 
-Are researchers too busy researching to notice bad actors running with their hard work? A <Link href="https://www.nature.com/articles/s41562-021-01217-2">recent Nature article</Link> titled "How conspiracists exploited COVID-19 science" [^1], explains their strategies. The doubt and caution on which science is built, are easy to hijack for someone's malevolent intent. Here's another <Link href="https://www.vox.com/science-and-health/2019/6/11/18652225/hype-science-press-releases">article by Vox</Link>, titled "Hyped-up science erodes trust"[^2]. When the university press serves as a researchers hype man, the chance of finding nuance in any subsequent news article is close to zero. 
+Are researchers too busy researching to notice bad actors running with their hard work? A <a href="https://www.nature.com/articles/s41562-021-01217-2">recent Nature article</a> titled "How conspiracists exploited COVID-19 science" [^1], explains their strategies. The doubt and caution on which science is built, are easy to hijack for someone's malevolent intent. Here's another <a href="https://www.vox.com/science-and-health/2019/6/11/18652225/hype-science-press-releases">article by Vox</a>, titled "Hyped-up science erodes trust"[^2]. When the university press serves as a researchers hype man, the chance of finding nuance in any subsequent news article is close to zero. 
 
 Although both articles approach the problem from different directions, their conclusion is the same: scientists need to do better at informing the public. Why aren't we doing well, and how do we change it? 
 
@@ -36,9 +35,9 @@ Before that, there were several different document formats, all incompatible wit
 
 
 Check out these beautiful data visualizations to get an idea:
-- <Link href="https://connorrothschild.github.io/bob-ross-art-gallery/">Bob Ross Art Gallery</Link>
-- <Link href="https://pudding.cool/2019/06/science_etc_2/">The Anti-Vaccine Chronicles</Link>
-- <Link href="https://pudding.cool/projects/vocabulary/">The Largest Vocabulary In Hip Hop</Link>
+- <a href="https://connorrothschild.github.io/bob-ross-art-gallery/">Bob Ross Art Gallery</a>
+- <a href="https://pudding.cool/2019/06/science_etc_2/">The Anti-Vaccine Chronicles</a>
+- <a href="https://pudding.cool/projects/vocabulary/">The Largest Vocabulary In Hip Hop</a>
 
 Looking at what's possible in a browser, why don't we just move research to the internet?
 

@@ -23,7 +23,6 @@ layout: post
 
 <script>
     import Blockquote from '$lib/components/markdown/Blockquote.svelte' 
-    import Link from '$lib/components/markdown/Link.svelte'
     export let activity;
 
     async function getActivity() {
@@ -44,7 +43,7 @@ It makes me happy when I solve a problem by reading documentation instead of wat
 
 </div>
 <br>
-<Link class="mt-4" href="http://koenraijer.io/blog/svelteKit-endpoints#complete-code">Skip to the code</Link>
+<a no_target class="mt-4" href="http://koenraijer.io/blog/svelteKit-endpoints#complete-code">Skip to the code</a>
 
 ## Why not just request data straight from the load function?
 

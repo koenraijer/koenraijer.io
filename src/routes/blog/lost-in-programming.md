@@ -4,7 +4,7 @@ subtitle: My first steps in code
 date: "2020-12-31"
 updated: "2021-01-7"
 tags:
-    - Programming
+    - Computer Science
 category: essay
 layout: post
 image: "/rebalancingCalculator.gif"

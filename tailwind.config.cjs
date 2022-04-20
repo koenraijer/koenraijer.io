@@ -53,7 +53,7 @@ const config = {
         themes: [
             {
               night: {
-                "primary": "#595cff",
+                "primary": "#2989FF", // "#595cff",
                 "secondary": "#FFC457",
                 "tertiary": "#CAFF57",
                 "accent": "#F471B5",

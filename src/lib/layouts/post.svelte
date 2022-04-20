@@ -1,7 +1,7 @@
 <script context="module">
-  import P from '$lib/components/markdown/P.svelte'
+  import A from '$lib/components/markdown/A.svelte'
   import Blockquote from '$lib/components/markdown/Blockquote.svelte'
-  export { P as p}
+  export { A as a}
   export { Blockquote as blockquote}
 </script>
 <script>
@@ -27,28 +27,31 @@
 	<meta name="twitter:title" content={title} />
 </svelte:head>
 
-<article class="relative text-base max-w-[60ch] mx-auto px-4 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
-  <time class="text-sm" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>, <svg class="h-5 w-5 inline fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="128" y1="80" x2="128" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="169.6" y1="152" x2="128" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="184.2 99.7 224.2 99.7 224.2 59.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg> <time class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>.
-  <h1 class="pb-4 text-4xl">{title}</h1>
-
-  <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
+<article class="relative max-w-[75ch] mx-auto px-6 md:px-8">
+  <div class="text-base prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
+    <time class="text-sm" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>, <svg class="h-5 w-5 inline fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="none" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="128" y1="80" x2="128" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="169.6" y1="152" x2="128" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><polyline points="184.2 99.7 224.2 99.7 224.2 59.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M190.2,190.2a88,88,0,1,1,0-124.4l34,33.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg> <time class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>.
+    <h1 class="pb-4 text-4xl">{title}</h1>
   
-  <slot></slot>
+    <ToC allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
+    
+    <slot></slot>
+  
+    <div class="">
+      <hr>
+      <Giscus
+      repo="koenraijer/utterances"
+      repoId="R_kgDOHLAsiQ"
+      category="Announcements"
+      categoryId="DIC_kwDOHLAsic4COjlc"
+      mapping="url"
+      term="Welcome to @giscus/svelte component!"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme="light"
+      lang="en"
+      />
+    </div>
+  </div>
 
-  <div class="max-w-[60ch] mx-auto">
-    <hr>
-    <Giscus
-    repo="koenraijer/utterances"
-    repoId="R_kgDOHLAsiQ"
-    category="Announcements"
-    categoryId="DIC_kwDOHLAsic4COjlc"
-    mapping="url"
-    term="Welcome to @giscus/svelte component!"
-    reactionsEnabled="1"
-    emitMetadata="0"
-    inputPosition="top"
-    theme="light"
-    lang="en"
-    />
-</div>
 </article>

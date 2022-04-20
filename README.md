@@ -19,9 +19,9 @@
 - Lighthouse all 100!
 - Uses Giscus/Github Discussions as comments.
 - Privacy-proof, free analytics using GoatCounter.
+- Spotify API integration to show realtime Now Playing and top 20 tracks. 
 
 ## To do list:
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Properly add placeholders for lazy loaded images.
 - Make link in endpoint post not external. 
-- Add Spotify API integration like https://leerob.io/blog/spotify-api-nextjs, https://leerob.io/snippets/spotify-top-tracks  

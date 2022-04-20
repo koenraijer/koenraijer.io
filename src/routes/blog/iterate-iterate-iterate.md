@@ -9,7 +9,6 @@ category: note
 layout: note
 ---
 <script>
-    import Link from '$lib/components/markdown/Link.svelte'
     import Image from '$lib/components/Image.svelte'
 </script>
 
@@ -25,7 +24,7 @@ So I did, and everything went well. It took me under an hour to fix something I 
 
 I know, working on programming projects is *supposed* to be incremental. I basically came up with the obvious thing to do. Still, finding out the hard way may stop me from forgetting it.
 
-**P.S.** <Link href="https://koenraijer-f1eek7b15-koenraijer.vercel.app/">Permalink to the old design</Link>
+**P.S.** <a href="https://koenraijer-f1eek7b15-koenraijer.vercel.app/">Permalink to the old design</a>
 
 **P.P.S** 🎉🎉🎉
 <Image src="/lighthouse.png" alt="Perfect Lighthouse scores!" halfbleed />

@@ -4,13 +4,12 @@ subtitle: All the steps to get you going.
 date: "2022-03-09" 
 updated: "2022-03-09"
 tags:
-    - Tag 1
+    - Research
 category: tutorial
 layout: post
 image: '/endnote_logo.png'
 ---
 <script>
-    import Link from '$lib/components/markdown/Link.svelte'
     import Image from '$lib/components/Image.svelte'
 </script>
 
@@ -21,7 +20,7 @@ This tutorial shows you how to set it up, add references with and without EndNot
 ## Setting everything up
 - Download and install EndNote 20 (often available for free or at a discount through your university).
 - Inside EndNote, click on `File`, then on `New...` to create your library. Don't change the name of the library folder, because things will break.
-- <Link href="https://click.endnote.com/invite/ec3642115">Download EndNote Click</Link>. It's an optional, but highly recommended browser extension that navigates paywalls, logins and redirects, giving you direct access to the PDF. Currently only available for Chrome and Firefox. 
+- <a href="https://click.endnote.com/invite/ec3642115">Download EndNote Click</a>. It's an optional, but highly recommended browser extension that navigates paywalls, logins and redirects, giving you direct access to the PDF. Currently only available for Chrome and Firefox. 
 
 ## Adding a reference to your library
 - Go to your research database of choice, login through your institution, and find a study you like (I use PubMed).

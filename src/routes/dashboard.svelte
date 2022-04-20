@@ -11,7 +11,7 @@
     export let top_tracks;
 </script>
 
-<article class="relative text-base max-w-[60ch] mx-auto px-4 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
+<article class="relative max-w-[75ch] mx-auto px-6 md:px-8 prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-semibold prose-a:no-underline">
  
     <h1 class="text-3xl max-w-[50ch] mb-2 text-base">Top tracks</h1>
     <p class="mb-8">Curious what I'm currently jamming to? Here's my top tracks on Spotify updated daily.</p>

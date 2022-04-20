@@ -16,6 +16,7 @@
         getNowPlaying();
     }, 5000);
     
+
     /*
     $: request_timer = song.duration_ms - song.progress_ms // See what's left of a song before making another API call. 
 

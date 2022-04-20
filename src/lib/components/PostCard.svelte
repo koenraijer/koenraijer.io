@@ -2,10 +2,10 @@
     export let post, index, searchedPosts
 </script>
 
-<a class="flex gap-4 pb-4 flex-row sm:flex-nowrap flex-wrap-reverse group justify-start" href="{post[1].path}" sveltekit:prefetch>
+<a class="flex gap-4 pb-2 flex-row sm:flex-nowrap flex-wrap-reverse group justify-start" href="{post[1].path}" sveltekit:prefetch>
     <div class="">
       <div class="flex flex-row row-nowrap justify-start">
-        <h2 class="text-xl font-[500] group-hover:underline">
+        <h2 class="text-lg font-[500] group-hover:underline">
             {#if post[1].meta.category === "tutorial"}
                 <div class="badge badge-primary py-3 mr-1 text-base-100 transform -translate-y-1">{post[1].meta.category}</div>
             {:else if post[1].meta.category === "essay"}
