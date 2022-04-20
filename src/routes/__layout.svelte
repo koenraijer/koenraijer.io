@@ -54,7 +54,7 @@
 	<Navbar />
 
 	{#key currentRoute}
-		<main class="flex-grow py-8 md:py-16" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
+		<main class="flex-grow py-8 md:py-16" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
 			<slot />
 		</main>
 	{/key}
