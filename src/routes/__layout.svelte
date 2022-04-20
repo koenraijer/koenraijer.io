@@ -43,7 +43,7 @@
 	<script data-goatcounter="https://koenraijer.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	
 	<!--Preloading-->
-	<link rel="preload" href="/avatar.webp" as="image">
+	<link rel="preload" href="/avatar2.webp" as="image">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"> 
