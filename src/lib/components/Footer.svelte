@@ -1,7 +1,7 @@
 <script>
     import NowPlaying from "./NowPlaying.svelte";
 </script>
-<footer class="footer py-10 px-6 md:px-8 w-full max-w-[75ch] text-sm mx-auto grid-cols-3">
+<footer class="footer py-10 px-6 md:px-8 w-full max-w-[75ch] text-sm mx-auto grid-cols-1 sm:grid-cols-3">
     <div class="justify-self-start">
       <a sveltekit:prefetch href="/">Home</a>
       <a sveltekit:prefetch href="/dashboard">Dashboard</a>
