@@ -11,7 +11,9 @@ const c = [
 	() => import("../../src/routes/blog/lost-in-programming.md"),
 	() => import("../../src/routes/blog/svelteKit-endpoints.md"),
 	() => import("../../src/routes/blog/endnote-tutorial.md"),
-	() => import("../../src/routes/blog/spotify-api.md")
+	() => import("../../src/routes/blog/spotify-api.md"),
+	() => import("../../src/routes/test/__layout.reset.svelte"),
+	() => import("../../src/routes/test/index.svelte")
 ];
 
 const d = decodeURIComponent;
@@ -45,7 +47,10 @@ export const routes = [
 	[/^\/blog\/endnote-tutorial\/?$/, [c[0], c[4], c[11]], [c[1]]],
 
 	// src/routes/blog/spotify-api.md
-	[/^\/blog\/spotify-api\/?$/, [c[0], c[4], c[12]], [c[1]]]
+	[/^\/blog\/spotify-api\/?$/, [c[0], c[4], c[12]], [c[1]]],
+
+	// src/routes/test/index.svelte
+	[/^\/test\/?$/, [c[13], c[14]], []]
 ];
 
 // we import the root layout/error components eagerly, so that

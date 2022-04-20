@@ -10,7 +10,9 @@ tags:
 category: tutorial
 layout: post
 ---
-
+<svelte:head>
+	<meta property="og:image" content="/blog/spotify-api-banner.png"/>
+</svelte:head>
 <script>
     import Image from '$lib/components/Image.svelte'
     import Blockquote from '$lib/components/markdown/Blockquote.svelte'
