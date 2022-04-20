@@ -50,7 +50,7 @@
   <svelte:window on:scroll={setActiveHeading} />
   
   <nav tabindex="0" class="collapse collapse-arrow bg-gray-100 border-2 rounded-md mb-8 md:mb-12 not-prose px-4 sm:px-6 py-2 min-w-[50%]">
-    <input type="checkbox" class="m-0 p-0 min-h-fit"> 
+    <input type="checkbox" class="p-4 min-h-fit"> 
 
     <div id="__sections" class="collapse-title text-base text-base-content font-[500] p-0 m-0">
         Table of Contents
