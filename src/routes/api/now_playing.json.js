@@ -7,13 +7,11 @@ const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 export async function get() {
-  const {access_token, expires_in} = await fetch('https://www.koenraijer.io/api/access_token.json', {
-    method: 'POST',
-  }).then(res => res.json())
+  const {token, time_left} = await fetch('http://localhost:3000/api/access_token.json').then(res => res.json())
   
   const res = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
-    Authorization: `Bearer ${access_token}`
+    Authorization: `Bearer ${token}`
     }
   })
   
