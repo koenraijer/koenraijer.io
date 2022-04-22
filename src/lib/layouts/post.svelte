@@ -5,6 +5,7 @@
   export { Blockquote as blockquote}
 </script>
 <script>
+    import {seo} from '../stores.js'
     import ToC from "$lib/components/ToC.svelte";
     import Giscus from '@giscus/svelte'
     export let image
@@ -14,19 +15,25 @@
     export let date
     export let updated;
     export let toc = true;
+
+    $seo.title = title;
+    $seo.description = title + " - " + subtitle;
+    if(image)
+      $seo.openGraphURL = image;
+
 </script>
 
 <svelte:head>
-  <title>{title}</title>
-	<meta name="description" content="{title} - {subtitle}" />
+	<title>{$seo.title}</title>
+	<meta name="description" content={$seo.description} />
 
 	<!--Facebook-->
-	<meta property="og:image" content={image} />
-	<meta property="og:description" content="{title} - {subtitle}" />
-	<meta property="og:title" content={title} />
+	<meta property="og:image" content={$seo.openGraphURL} />
+	<meta property="og:description" content={$seo.description} />
+	<meta property="og:title" content={$seo.title} />
 
 	<!--Twitter-->
-	<meta name="twitter:title" content={title} />
+	<meta name="twitter:title" content={$seo.title} />
 </svelte:head>
 
 <article class="relative max-w-[75ch] mx-auto px-6 md:px-8">
