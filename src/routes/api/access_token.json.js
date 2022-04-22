@@ -25,7 +25,7 @@ export const get = async () => {
         body: new URLSearchParams({
         grant_type: 'refresh_token',
         refresh_token: 'AQA8dsZz8-lIf2VlXk2c4sXQLcv_O20qhijWjsS6Qr4ZBV0Mp6bjeV9p8ywEtwGD6BR1jpz1TwcJ9CdEq4vJifywslJQt5pRnBycXmUzOVcNLifrMXQVlwIX1YHSyBPnBZc',
-        redirect_uri: "http://localhost:3000/",
+        redirect_uri: "http://koenraijer.io/",
         client_id: "6a046c3ef5114c09801a2472891e4753",
         client_secret: "7e67de85b6e540959886511a46ee0663"
         })

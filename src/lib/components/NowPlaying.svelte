@@ -4,7 +4,7 @@
     let song;
 
     async function getNowPlaying() {
-        song = await fetch('https://koenraijer.io/api/now_playing.json').then(res => res.json())
+        song = await fetch('/api/now_playing.json').then(res => res.json())
     }
 
     onMount(async () => {
