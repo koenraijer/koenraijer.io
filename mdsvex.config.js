@@ -23,7 +23,6 @@ const config = defineConfig({
 
 	layout: {
 		post: '/src/lib/layouts/post.svelte',
-		note: '/src/lib/layouts/note.svelte',
 	},
 });
 

@@ -25,3 +25,4 @@
 - Use vite for image optimization (see https://github.com/matyunya/svelte-image) 
 - Properly add placeholders for lazy loaded images.
 - Make link in endpoint post not external. 
+- Fix ToC not closing on mobile. 

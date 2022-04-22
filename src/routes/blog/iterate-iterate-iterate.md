@@ -6,7 +6,8 @@ updated: "2022-03-10"
 tags:
     - Web development
 category: note
-layout: note
+layout: post
+toc: false
 ---
 <script>
     import Image from '$lib/components/Image.svelte'

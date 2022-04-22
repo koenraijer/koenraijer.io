@@ -7,7 +7,7 @@ tags:
     - Computer Science
     - Web development
 category: note
-layout: note
+layout: post
 ---
 
 A list of resources I use frequently, mostly but not exclusively related to web development. 

@@ -23,8 +23,8 @@
       <h2 class="text-base leading-snug my-2">{post[1].meta.subtitle}</h2>
       <time class="text-sm mb-0 inline text-gray-500" datetime="{post[1].meta.date}">{new Date(post[1].meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> <span class="text-sm font-bold inline"> 
     </div>
-    {#if post[1].meta.image}
-    <img class="w-5/6 mx-auto sm:w-48 inline-flex flex-col items-center aspect-auto object-contain" alt="Banner image for '{post[1].meta.title}'" src="{post[1].meta.image}">
+    {#if post[1].meta.image && post[1].meta.show_image}
+    <img class="mx-auto sm:w-48 inline-flex flex-col items-center aspect-auto object-cover rounded-xl" alt="Banner image for '{post[1].meta.title}'" src="{post[1].meta.image}">
     {/if}
   </a>
   {#if searchedPosts.length - 1 !== index}

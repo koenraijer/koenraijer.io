@@ -9,10 +9,9 @@ tags:
     - SvelteKit
 category: tutorial
 layout: post
+image: '/blog/ogimage_spotify_api.png'
+show_image: true
 ---
-<svelte:head>
-	<meta property="og:image" content="/blog/spotify-api-banner.png"/>
-</svelte:head>
 <script>
     import Image from '$lib/components/Image.svelte'
     import Blockquote from '$lib/components/markdown/Blockquote.svelte'
