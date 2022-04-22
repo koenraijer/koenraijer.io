@@ -17,7 +17,7 @@ export async function get() {
     }
   })
   
-  if (res.status === 204 || res.status > 400) { // Spotify returns 204 when there's nothing playing
+  if (res.status === 204 || res.status >= 400) { // Spotify returns 204 when there's nothing playing
     return {
       status: 200,
       body: { isPlaying: false }}
