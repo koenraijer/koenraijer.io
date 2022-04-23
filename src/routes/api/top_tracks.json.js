@@ -1,7 +1,7 @@
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
 
 export async function get() {
-    const {token} = await fetch('/api/access_token.json').then(res => res.json())
+    const {token} = await fetch('../api/access_token.json').then(res => res.json())
 
     const res = await fetch(TOP_TRACKS_ENDPOINT, {
         headers: {

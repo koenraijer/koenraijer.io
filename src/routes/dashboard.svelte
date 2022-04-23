@@ -1,6 +1,6 @@
 <script context="module">
     export const load = async ({fetch}) => {
-        const top_tracks = await fetch('./api/top_tracks.json').then(res => res.json())
+        const top_tracks = await fetch('../api/top_tracks.json').then(res => res.json())
         return {
             props: {top_tracks}
         }
