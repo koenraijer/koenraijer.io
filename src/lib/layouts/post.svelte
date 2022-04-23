@@ -19,7 +19,7 @@
     $seo.title = title;
     $seo.description = title + " - " + subtitle;
     if(image)
-      $seo.openGraphURL = image;
+      $seo.openGraphURL = "https://www.koenraijer.io" + image;
 
 </script>
 
