@@ -10,7 +10,7 @@ tags:
 category: tutorial
 layout: post
 image: '/blog/ogimage_spotify_api.png'
-show_image: true
+show_image: false
 ---
 <script>
     import Image from '$lib/components/Image.svelte'

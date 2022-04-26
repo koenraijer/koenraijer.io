@@ -63,18 +63,17 @@
         class:active={activeHeading?.node === heading.node}
         style={`--depth: ${heading.depth}`}
         >
-        <a class="!no-underline" href={`#${heading.node.id}`}>{heading.title}</a>
+        <a class="" href={`#${heading.node.id}`}>{heading.title}</a>
         </li>
     {/each}
     </ul>
   </nav>
 
   <style>
-      /*
-      .active {
-          @apply text-base-content font-semibold;
+      
+      a:hover {
+        @apply underline;
       }
-      */
 
       .heading {
             margin-left: calc(var(--depth, 0) * 0.75rem);

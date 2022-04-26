@@ -22,7 +22,7 @@
 	}
 
 	hr {
-		@apply bg-gray-200 h-[2px]
+		@apply bg-gray-200
 	}
 
 	.prose :not(:where(h1, h2, h3, h4, h5, h6)) :where(a):not(:where([class~="not-prose"] *)) {
