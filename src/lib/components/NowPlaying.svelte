@@ -66,7 +66,7 @@
 {/key}
 
 <style>
-    .audio span {
+        .audio span {
         width: 4px;
         height: 100%;
         border-radius: 2px;
@@ -94,21 +94,10 @@
         left: 10px;
         }
   
-        .fade-in {
-            opacity: 1;
-            animation-name: fadeInOpacity;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 2s;
-        }
-
-        @keyframes fadeInOpacity {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+    @keyframes animationTest {
+        0%   { height: 2px; }
+        50% { height: 14px; }
+        100% { height: 2px; }
+    }
   </style>
   
