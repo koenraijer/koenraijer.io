@@ -6,6 +6,7 @@ const config = {
 
     variants: {
         textOpacity: ['group-hover'],
+        height: ['responsive', 'hover', 'focus']
       },
 	theme: {
 		fluidType: {
@@ -43,6 +44,9 @@ const config = {
         },
 
 		extend: {
+            transitionProperty: {
+                'height': 'height'
+            },
             gridTemplateColumns: {
                 'main': 'minmax(60%, 60ch) 1fr',
             },

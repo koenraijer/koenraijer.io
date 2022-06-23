@@ -24,8 +24,6 @@
   export let posts;
   let searchTerm = ''
   
-$: console.log(selected, selected.length, searchText)
-
   let searchText = ''
 
   // Convert object to array
@@ -81,11 +79,7 @@ $: console.log(selected, selected.length, searchText)
 </svelte:head>
 
 <div class="max-w-[75ch] mx-auto px-6 md:px-8">
-    <div class="absolute right-0 top-0">
-        <NowPlaying/>
-    </div>
-
-<Hero/>
+    <Hero/>
 
   <h2 class="text-xl font-semibold mb-2">Latest posts</h2>
   <MultiSelect bind:searchText bind:selected options={post_types} ulOptionsClass="!shadow-none !rounded-none" liOptionClass="hover:bg-gray-100" outerDivClass="focus:w-full w-3/6" noOptionsMsg="No matching options"/>

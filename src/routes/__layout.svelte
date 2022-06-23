@@ -14,9 +14,12 @@
 	import '../app.css';
 	import '../lib/prism.css';
 	import { seo } from '$lib/stores';
+	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { fade } from 'svelte/transition';
 	export let currentRoute;
+
+	$: console.log(currentRoute)
 </script>
 
 <svelte:head>
@@ -49,6 +52,9 @@
 
 
 <div class="flex flex-col overflow-x-hidden min-h-screen">
+	{#if currentRoute !== "/"}
+		<Navbar/>
+	{/if}
 	{#key currentRoute}
 		<main class="flex-grow pt-8 pb-8 md:pt-16" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
 			<slot />
