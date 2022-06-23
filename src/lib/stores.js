@@ -7,3 +7,5 @@ export const seo = writable(
         openGraphURL: 'https://www.koenraijer.io/blog/ogimage_avatar.png'
     }
 )
+
+export const active_heading = writable({})

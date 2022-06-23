@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	body {
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+		text-rendering: optimizeLegibility !important;
+		-webkit-font-smoothing: antialiased !important;
+	}
+}
 @layer utilities {
 	::selection {
 		@apply bg-secondary;
@@ -32,4 +39,5 @@
 	.prose :where(a):not(:where([class~="not-prose"] *)) {
 		@apply hover:underline
 	}
+
 }

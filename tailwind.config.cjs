@@ -4,15 +4,18 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
+    variants: {
+        textOpacity: ['group-hover'],
+      },
 	theme: {
 		fluidType: {
             // your fluid type settings
             // works only with unitless numbers
             // This numbers are the defaults settings
             settings: {
-                fontSizeMin: 1.125, // 1.125rem === 18px
-                fontSizeMax: 1.25, // 1.25rem === 20px
-                ratioMin: 1.125, // Multiplicator Min
+                fontSizeMin: 1.05, // 1.125rem === 18px
+                fontSizeMax: 1.125, // 1.25rem === 20px
+                ratioMin: 1.175, // Multiplicator Min
                 ratioMax: 1.25, // Multiplicator Max
                 screenMin: 20, // 20rem === 320px
                 screenMax: 96, // 96rem === 1536px

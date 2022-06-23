@@ -1,8 +1,12 @@
 <script>
     import { page } from '$app/stores'
     import { onMount } from 'svelte'
+    import {active_heading} from '$lib/stores'
+    import {browser} from '$app/env'
     export let allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     export let activeHeading = null
+    export let title;
+
     let scrollY
     let headings = []
     function updateHeadings() {
@@ -45,6 +49,17 @@
         activeHeading = headings[headings.length - 1]
       }
     }
+
+    $: if(browser) {
+        if(activeHeading === undefined) {
+        $active_heading = title
+      } else if(activeHeading === null) {
+        $active_heading = headings[0]
+      } else {
+        $active_heading = activeHeading.title
+      }
+    }
+
   </script>
   
   <svelte:window on:scroll={setActiveHeading} />

@@ -14,10 +14,8 @@
 	import '../app.css';
 	import '../lib/prism.css';
 	import { seo } from '$lib/stores';
-	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { fade } from 'svelte/transition';
-
 	export let currentRoute;
 </script>
 
@@ -51,10 +49,8 @@
 
 
 <div class="flex flex-col overflow-x-hidden min-h-screen">
-	<Navbar />
-
 	{#key currentRoute}
-		<main class="flex-grow py-8 md:py-16" in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
+		<main class="flex-grow pt-8 pb-8 md:pt-16" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
 			<slot />
 		</main>
 	{/key}
