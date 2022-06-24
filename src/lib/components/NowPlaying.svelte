@@ -68,7 +68,7 @@
         border-radius: 2px;
         position: absolute;
         bottom: .45rem;
-        @apply bg-inherit dark:bg-white;
+        @apply bg-slate-700 dark:bg-white;
     }
     
     .audio span:first-of-type {
