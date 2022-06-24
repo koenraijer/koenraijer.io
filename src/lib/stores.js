@@ -1,4 +1,5 @@
 import {writable} from 'svelte/store'
+import { browser } from '$app/env';
 
 export const seo = writable(
     {
@@ -9,3 +10,23 @@ export const seo = writable(
 )
 
 export const active_heading = writable({})
+ 
+const defaultValue = 'light';
+
+const initialValue = browser ? window.localStorage.getItem('theme') ?? defaultValue : defaultValue;
+
+export const theme = writable(initialValue);
+
+theme.subscribe((value) => {
+
+  if (browser) {
+
+    window.localStorage.setItem('theme', value);
+
+  }
+
+});
+
+ 
+
+export { theme as default };

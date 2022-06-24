@@ -8,6 +8,7 @@ const config = {
         textOpacity: ['group-hover'],
         height: ['responsive', 'hover', 'focus']
       },
+    darkMode: 'class',
 	theme: {
 		fluidType: {
             // your fluid type settings

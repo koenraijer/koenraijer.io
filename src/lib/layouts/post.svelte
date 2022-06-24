@@ -38,7 +38,7 @@
 </svelte:head>
 
 <article class="relative max-w-[75ch] mx-auto px-6 md:px-8 pt-8">
-  <div class="text-base prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-[500] prose-a:no-underline">
+  <div class="text-base prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-[500] prose-a:no-underline !text-white dark:prose-p:text-white dark:prose-headings:text-white dark:prose-a:text-primary dark:prose-li:text-white dark:prose-code:text-white dark:prose-strong:text-white dark:prose-[time]:text-white">
     <h1 class="pb-4 text-2xl">{title}</h1>
     {#if show_image}
       <Image alt="Banner image for post with title: {title}" src="{image}" halfbleed />
