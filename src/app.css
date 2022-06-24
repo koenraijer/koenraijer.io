@@ -39,5 +39,8 @@
 	.prose :where(a):not(:where([class~="not-prose"] *)) {
 		@apply hover:underline
 	}
-
+	html {
+		visibility: visible;
+		opacity: 1;
+	}
 }

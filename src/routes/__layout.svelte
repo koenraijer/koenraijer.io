@@ -18,6 +18,18 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { fade } from 'svelte/transition';
 	export let currentRoute;
+	import theme from '$lib/stores'
+	import {browser} from '$app/env'
+	
+	$: if ($theme === 'dark') {
+		if(browser) {
+			document.documentElement.classList.add('dark')
+		}
+	} else if($theme === 'light') {
+		if(browser) {
+			document.documentElement.classList.remove('dark')
+		}
+	}
 </script>
 
 <svelte:head>

@@ -37,7 +37,6 @@
     function left() {
         isOn = false
     }
-    $: console.log(isOn)
 </script>
 
 {#key isOn}

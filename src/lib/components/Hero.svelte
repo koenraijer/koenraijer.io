@@ -6,16 +6,6 @@
         let light_theme = true;
 
         $: light_theme = $theme === 'light';
-
-        $: if ($theme === 'dark') {
-            if(browser) {
-                document.documentElement.classList.add('dark')
-            }
-        } else if($theme === 'light') {
-            if(browser) {
-                document.documentElement.classList.remove('dark')
-            }
-        }
         // https://rodneylab.com/using-local-storage-sveltekit/
 </script>
 <section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-end">
