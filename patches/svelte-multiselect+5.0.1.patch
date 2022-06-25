@@ -1,5 +1,5 @@
 diff --git a/node_modules/svelte-multiselect/MultiSelect.svelte b/node_modules/svelte-multiselect/MultiSelect.svelte
-index de22a9a..b317eb4 100644
+index de22a9a..1eebad8 100644
 --- a/node_modules/svelte-multiselect/MultiSelect.svelte
 +++ b/node_modules/svelte-multiselect/MultiSelect.svelte
 @@ -43,6 +43,8 @@ export let required = false;
@@ -44,7 +44,7 @@ index de22a9a..b317eb4 100644
      on:invalid={() => (invalid = true)}
    />
 -  <ExpandIcon width="15px" style="min-width: 1em; padding: 0 1pt;" />
-+  <button type="button" name="expand options" class="expandButton inline pr-2 my-2" on:mouseup|self|stopPropagation={() => setOptionsVisible(true)}
++  <button type="button" name="expand options" class="expandButton inline pr-2 my-2 !z-50" on:mouseup|self|stopPropagation={() => setOptionsVisible(true)}
 +    on:focus={() => setOptionsVisible(true)} >
 +    <ExpandIcon width="16" height="16" class="w-5 h-5 p-1 m-0"/>
 +  </button>

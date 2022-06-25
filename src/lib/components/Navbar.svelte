@@ -10,7 +10,7 @@
 </script>
 
 <nav class="fixed bg-white/90 dark:bg-[#212121e6] top-0 w-full h-fit px-4 py-2 !z-50 text-sm">
-  <a class="font-[500] hover:underline whitespace-nowrap" href="/">Koen Raijer&nbsp;</a> 
+  <a class="font-[500] hover:underline whitespace-nowrap dark:text-white" href="/">Koen Raijer&nbsp;</a> 
   <span class="text-gray-500">|</span>
       {#key heading}
         <span in:fade class=" text-gray-500"> {heading}</span>

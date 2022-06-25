@@ -8,7 +8,7 @@
         $: light_theme = $theme === 'light';
         // https://rodneylab.com/using-local-storage-sveltekit/
 </script>
-<section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-end">
+<section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-center">
     <div class="col-span-3 row-start-2 sm:row-start-1">
         <h1 class="text-3xl font-[500] sm:pt-0 pt-4 pb-4">Koen Raijer</h1>
       <h2 class="leading-7">Medicine student and aspiring psychiatrist / data scientist.<br> Building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
@@ -41,5 +41,5 @@
         </div>
     </div>
 
-    <img height="200" width="200" alt="Avatar of Koen" class="mask mask-circle aspect-square sm:col-span-1 row-start-1 h-28 w-28 sm:w-auto sm:h-auto" src="/avatar2.webp">
+    <img height="200" width="200" alt="Avatar of Koen" class="mask mask-circle aspect-auto sm:col-span-1 row-start-1 h-22 w-22 sm:w-5/6 sm:h-auto" src="/avatar2.webp">
 </section>
