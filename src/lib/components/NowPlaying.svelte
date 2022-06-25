@@ -46,7 +46,7 @@
         &nbsp;Loading - <span class="text-gray-400">&nbsp;Spotify</span>        
         {:else if song}
             {#if song.isPlaying === true}
-                <div class="audio inline-flex h-4 w-4 relative">
+                <div class="audio inline-flex h-4 w-4 relative transform -translate-y-1">
                     <span></span>
                     <span></span>
                     <span></span>
