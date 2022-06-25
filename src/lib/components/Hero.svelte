@@ -41,5 +41,5 @@
         </div>
     </div>
 
-    <img height="200" width="200" alt="Avatar of Koen" class="mask mask-circle aspect-auto sm:col-span-1 row-start-1 h-22 w-22 sm:w-5/6 sm:h-auto" src="/avatar2.webp">
+    <img height="200" width="200" alt="Avatar of Koen" class="mask mask-circle aspect-auto sm:col-span-1 row-start-1 h-18 w-18 sm:w-5/6 sm:h-auto" src="/avatar2.webp">
 </section>
