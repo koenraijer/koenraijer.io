@@ -3,6 +3,7 @@
     import { onMount } from 'svelte'
     import {active_heading} from '$lib/stores'
     import {browser} from '$app/env'
+    import {navigating} from '$app/stores'
     export let allowedHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
     export let activeHeading = null
     export let title;
@@ -51,10 +52,9 @@
     }
 
     $: if(browser) {
-        if(activeHeading === undefined) {
-        $active_heading = title
-      } else if(activeHeading === null) {
-        $active_heading = headings[0]
+        if(activeHeading === undefined || activeHeading === null) {
+        $active_heading = title ? title : headings[0].title
+        console.log(headings[0])
       } else {
         $active_heading = activeHeading.title
       }

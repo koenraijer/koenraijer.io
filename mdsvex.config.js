@@ -17,6 +17,7 @@ const config = defineConfig({
 			{
 				behavior: 'wrap',
 				// https://github.com/pngwn/MDsveX/issues/387
+				
 			}
 		]
 	],

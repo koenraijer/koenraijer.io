@@ -1,0 +1,87 @@
+diff --git a/node_modules/svelte-multiselect/MultiSelect.svelte b/node_modules/svelte-multiselect/MultiSelect.svelte
+index de22a9a..17069cf 100644
+--- a/node_modules/svelte-multiselect/MultiSelect.svelte
++++ b/node_modules/svelte-multiselect/MultiSelect.svelte
+@@ -18,7 +18,7 @@ export let outerDiv = null;
+ export let placeholder = undefined;
+ export let id = undefined;
+ export let name = id;
+-export let noOptionsMsg = `No matching options`;
++export let noOptionsMsg = `NO`;
+ export let activeOption = null;
+ export let filterFunc = (op, searchText) => {
+     if (!searchText)
+@@ -244,7 +244,7 @@ const if_enter_or_space = (handler) => (event) => {
+   aria-multiselectable={maxSelect === null || maxSelect > 1}
+   class:invalid
+   class="multiselect {outerDivClass}"
+-  on:mouseup|stopPropagation={() => setOptionsVisible(true)}
++  
+   title={disabled ? disabledTitle : null}
+   aria-disabled={disabled ? `true` : null}
+ >
+@@ -257,7 +257,10 @@ const if_enter_or_space = (handler) => (event) => {
+     class="form-control"
+     on:invalid={() => (invalid = true)}
+   />
+-  <ExpandIcon width="15px" style="min-width: 1em; padding: 0 1pt;" />
++  <button class="expandButton inline pr-2 !m-0 mr-1 my-2" on:mouseup|self|stopPropagation={() => setOptionsVisible(true)}
++    on:focus={() => setOptionsVisible(true)} >
++    <ExpandIcon width="16" height="16" class="w-4 h-4 p-0 m-0"/>
++  </button>
+   <ul class="selected {ulSelectedClass}">
+     {#each selected as option, idx}
+       <li class={liSelectedClass} aria-selected="true">
+@@ -282,9 +285,7 @@ const if_enter_or_space = (handler) => (event) => {
+         bind:this={input}
+         {autocomplete}
+         bind:value={searchText}
+-        on:mouseup|self|stopPropagation={() => setOptionsVisible(true)}
+         on:keydown={handleKeydown}
+-        on:focus={() => setOptionsVisible(true)}
+         {id}
+         {name}
+         {disabled}
+@@ -338,6 +339,7 @@ const if_enter_or_space = (handler) => (event) => {
+         on:mousedown|stopPropagation
+         on:mouseup|stopPropagation={() => {
+           if (!disabled) isSelected(label) ? remove(label) : add(label)
++          setOptionsVisible(false)
+         }}
+         title={disabled ? disabledTitle : (isSelected(label) && selectedTitle) || title}
+         class:selected={isSelected(label)}
+@@ -417,18 +419,11 @@ const if_enter_or_space = (handler) => (event) => {
+     flex-wrap: wrap;
+   }
+   :where(div.multiselect > ul.selected > li) {
+-    align-items: center;
+-    border-radius: 3pt;
+-    display: flex;
+-    margin: 2pt;
+     line-height: normal;
+     transition: 0.3s;
+     white-space: nowrap;
+-    background: var(--sms-selected-bg, rgba(0, 0, 0, 0.15));
+-    padding: var(--sms-selected-li-padding, 1pt 5pt);
+-    color: var(--sms-selected-text-color, var(--sms-text-color));
+   }
+-  :where(div.multiselect button) {
++  :where(div.multiselect button):not(.expandButton) {
+     border-radius: 50%;
+     display: flex;
+     transition: 0.2s;
+diff --git a/node_modules/svelte-multiselect/icons/ChevronExpand.svelte b/node_modules/svelte-multiselect/icons/ChevronExpand.svelte
+index 658985c..080279a 100644
+--- a/node_modules/svelte-multiselect/icons/ChevronExpand.svelte
++++ b/node_modules/svelte-multiselect/icons/ChevronExpand.svelte
+@@ -1,5 +1,5 @@
+-<svg {...$$props} fill="currentColor" viewBox="0 0 16 16">
+-  <path
+-    d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"
+-  />
+-</svg>
++  <svg {...$$props} fill="currentColor" viewBox="0 0 16 16">
++    <path
++      d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"
++    />
++  </svg>

@@ -18,8 +18,9 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { fade } from 'svelte/transition';
 	export let currentRoute;
-	import theme from '$lib/stores'
+	import {theme, active_heading} from '$lib/stores'
 	import {browser} from '$app/env'
+	import {navigating} from '$app/stores'
 	
 	$: if ($theme === 'dark') {
 		if(browser) {
@@ -30,6 +31,14 @@
 			document.documentElement.classList.remove('dark')
 		}
 	}
+
+	$: if(browser) {
+		if($navigating) {
+			$active_heading = null
+			console.log("Store cleared")
+      }
+	}
+
 </script>
 
 <svelte:head>

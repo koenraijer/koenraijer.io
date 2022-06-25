@@ -53,7 +53,7 @@
           // Note: this method has certain edge cases, e.g.: "ent,ba", which is where to tags are separated.
           return post[1].meta.tags.toString().toLowerCase().includes(searchText.toLowerCase())
   }).splice(0, amountLoaded);
-  let amountLoaded = 50;	
+  let amountLoaded = 25;	
 </script>
 
 <svelte:head>
@@ -82,7 +82,7 @@
     <Hero/>
 
   <h2 class="text-xl font-semibold mb-2">Latest posts</h2>
-  <MultiSelect bind:searchText bind:selected options={post_types} ulOptionsClass="!shadow-none !rounded-none" liOptionClass="hover:bg-gray-100" outerDivClass="focus:w-full w-3/6" noOptionsMsg="No matching options"/>
+  <MultiSelect bind:searchText bind:selected options={post_types} ulOptionsClass="!shadow-none !rounded-xl mt-1" liSelectedClass="inline-flex bg-gray-200 rounded-lg my-1 dark:bg-gray-50/10 py-1 px-2 mx-1" liOptionClass="hover:bg-gray-100 dark:bg-gray-50/10" outerDivClass="w-4/6 dark:border-gray-50/10 dark:focus-within:border-gray-200 focus-within:border-[#212121]" noOptionsMsg="No matching options"/>
 
   <div class="flex flex-col justify-between flex-nowrap my-8 mt-12 gap-y-8">
       <div class="grid grid-cols-1 gap-y-4">
@@ -95,13 +95,7 @@
           {/if}
       </div>
       {#if posts.length > amountLoaded}
-          <button on:click={() => amountLoaded+=50} class="p-4 py-2 mt-4 font-[500] border-gray-400 border bg-gray-200 rounded hover:bg-gray-100 mx-auto w-fit">Load more</button>
+          <button on:click={() => amountLoaded+=50} class="p-4 py-2 mt-4 font-[500] text-sm bg-gray-200 rounded hover:bg-primary transition-colors w-fit">Load more</button>
       {/if}
   </div>
 </div>
-
-<style>
-    multiselect::after {
-        border-color: darkslategray;
-    }
-</style>
