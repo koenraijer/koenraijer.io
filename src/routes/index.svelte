@@ -82,7 +82,7 @@
     <Hero/>
 
   <h2 class="text-xl font-semibold mb-2">Latest posts</h2>
-  <MultiSelect bind:searchText bind:selected options={post_types} ulOptionsClass="!shadow-none !rounded-xl mt-1" liSelectedClass="inline-flex bg-gray-200 rounded-lg my-1 dark:bg-gray-50/10 py-1 px-2 mx-1" liOptionClass="hover:bg-gray-100 dark:bg-gray-50/10" outerDivClass="w-4/6 dark:border-gray-50/10 dark:focus-within:border-gray-200 focus-within:border-[#212121]" noOptionsMsg="No matching options"/>
+  <MultiSelect bind:searchText bind:selected options={post_types} ulOptionsClass="!shadow-none !rounded-xl mt-1" liSelectedClass="inline-flex bg-gray-200 rounded-lg my-1 dark:bg-gray-50/10 py-1 px-2 mr-2" liOptionClass="hover:bg-gray-100 dark:bg-gray-50/10" outerDivClass="w-4/6 dark:border-gray-50/10 dark:focus-within:border-gray-200 focus-within:border-[#212121]"/>
 
   <div class="flex flex-col justify-between flex-nowrap my-8 mt-12 gap-y-8">
       <div class="grid grid-cols-1 gap-y-4">
