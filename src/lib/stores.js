@@ -10,6 +10,10 @@ export const seo = writable(
 )
 
 export const active_heading = writable({})
+
+export const page_height = writable({})
+
+export const page_offset = writable({})
  
 const defaultValue = 'light';
 

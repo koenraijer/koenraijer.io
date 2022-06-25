@@ -54,7 +54,6 @@
     $: if(browser) {
         if(activeHeading === undefined || activeHeading === null) {
         $active_heading = title ? title : headings[0].title
-        console.log(headings[0])
       } else {
         $active_heading = activeHeading.title
       }

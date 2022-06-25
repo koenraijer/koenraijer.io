@@ -52,7 +52,7 @@
     {/if}
     <slot></slot>
 
-    <div class="">
+    <div class="h-full w-full">
       <Giscus
       repo="koenraijer/utterances"
       repoId="R_kgDOHLAsiQ"
