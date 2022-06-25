@@ -1,5 +1,5 @@
 diff --git a/node_modules/svelte-multiselect/MultiSelect.svelte b/node_modules/svelte-multiselect/MultiSelect.svelte
-index de22a9a..a5a3e1a 100644
+index de22a9a..a12da9c 100644
 --- a/node_modules/svelte-multiselect/MultiSelect.svelte
 +++ b/node_modules/svelte-multiselect/MultiSelect.svelte
 @@ -43,6 +43,8 @@ export let required = false;
@@ -23,7 +23,7 @@ index de22a9a..a5a3e1a 100644
      }
      // on enter key: toggle active option and reset search text
      else if (event.key === `Enter`) {
-@@ -244,20 +251,24 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -244,20 +251,28 @@ const if_enter_or_space = (handler) => (event) => {
    aria-multiselectable={maxSelect === null || maxSelect > 1}
    class:invalid
    class="multiselect {outerDivClass}"
@@ -31,6 +31,10 @@ index de22a9a..a5a3e1a 100644
 +  
    title={disabled ? disabledTitle : null}
    aria-disabled={disabled ? `true` : null}
++  on:mousedown|stopPropagation
++  on:mouseup|stopPropagation={() => {
++    input?.focus();
++  }}
  >
    <input
 +    name="selectInput"
@@ -51,7 +55,7 @@ index de22a9a..a5a3e1a 100644
    <ul class="selected {ulSelectedClass}">
      {#each selected as option, idx}
        <li class={liSelectedClass} aria-selected="true">
-@@ -269,6 +280,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -269,6 +284,7 @@ const if_enter_or_space = (handler) => (event) => {
              on:mouseup|stopPropagation={() => remove(get_label(option))}
              on:keydown={if_enter_or_space(() => remove(get_label(option)))}
              type="button"
@@ -59,7 +63,7 @@ index de22a9a..a5a3e1a 100644
              title="{removeBtnTitle} {get_label(option)}"
            >
              <CrossIcon width="15px" />
-@@ -282,9 +294,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -282,9 +298,7 @@ const if_enter_or_space = (handler) => (event) => {
          bind:this={input}
          {autocomplete}
          bind:value={searchText}
@@ -69,7 +73,7 @@ index de22a9a..a5a3e1a 100644
          {id}
          {name}
          {disabled}
-@@ -338,6 +348,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -338,6 +352,7 @@ const if_enter_or_space = (handler) => (event) => {
          on:mousedown|stopPropagation
          on:mouseup|stopPropagation={() => {
            if (!disabled) isSelected(label) ? remove(label) : add(label)
@@ -77,7 +81,7 @@ index de22a9a..a5a3e1a 100644
          }}
          title={disabled ? disabledTitle : (isSelected(label) && selectedTitle) || title}
          class:selected={isSelected(label)}
-@@ -374,7 +385,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -374,7 +389,7 @@ const if_enter_or_space = (handler) => (event) => {
            {addOptionMsg}
          </li>
        {:else}
@@ -86,7 +90,7 @@ index de22a9a..a5a3e1a 100644
        {/if}
      {/each}
    </ul>
-@@ -417,18 +428,11 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -417,18 +432,11 @@ const if_enter_or_space = (handler) => (event) => {
      flex-wrap: wrap;
    }
    :where(div.multiselect > ul.selected > li) {
@@ -106,7 +110,7 @@ index de22a9a..a5a3e1a 100644
      border-radius: 50%;
      display: flex;
      transition: 0.2s;
-@@ -453,7 +457,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -453,7 +461,7 @@ const if_enter_or_space = (handler) => (event) => {
    }
    :where(div.multiselect > ul.selected > li > input) {
      border: none;
@@ -115,7 +119,7 @@ index de22a9a..a5a3e1a 100644
      background: none;
      flex: 1; /* this + next line fix issue #12 https://git.io/JiDe3 */
      min-width: 2em;
-@@ -461,6 +465,7 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -461,6 +469,7 @@ const if_enter_or_space = (handler) => (event) => {
      font-size: inherit;
      cursor: inherit; /* needed for disabled state */
    }
@@ -123,7 +127,7 @@ index de22a9a..a5a3e1a 100644
    :where(div.multiselect > ul.selected > li > input)::placeholder {
      color: var(--sms-placeholder-color);
    }
-@@ -511,11 +516,23 @@ const if_enter_or_space = (handler) => (event) => {
+@@ -511,11 +520,23 @@ const if_enter_or_space = (handler) => (event) => {
      color: var(--sms-li-selected-color);
    }
    :where(div.multiselect > ul.options > li.active) {
