@@ -54,6 +54,14 @@ const config = {
             gridTemplateRows: {
                 'featuredRows': 'minmax(auto, 25vh) minmax(50%, auto)'
             },
+            typography: (theme) => ({
+                DEFAULT: {
+                  css: {
+                    maxWidth: '75ch',        
+                    // ...
+                  },
+                },
+            }),
         }
 	},
 

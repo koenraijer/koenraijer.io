@@ -33,10 +33,10 @@
 	}
 
 	.prose :not(:where(h1, h2, h3, h4, h5, h6)) :where(a):not(:where([class~="not-prose"] *)) {
-		@apply text-primary hover:underline
+		@apply text-primary underline hover:no-underline
 	}
 
-	.prose :where(a):not(:where([class~="not-prose"] *)) {
-		@apply hover:underline
+	.prose :where(h1, h2, h3, h4, h5, h6) :where(a):not(:where([class~="not-prose"] *)) {
+		@apply no-underline hover:underline
 	}
 }

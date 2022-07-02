@@ -12,7 +12,7 @@
 
 <script>
 	import '../app.css';
-	import '../lib/prism.css';
+	import '../lib/prismDark.css';
 	import { seo } from '$lib/stores';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';

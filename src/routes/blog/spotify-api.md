@@ -2,7 +2,6 @@
 title: Using the Spotify API with SvelteKit 
 subtitle: Create a component that shows what you're listening to in realtime from scratch.
 date: "2022-04-20"
-updated: "2022-04-20"
 tags: 
     - Computer Science
     - Web development
@@ -18,26 +17,26 @@ show_image: false
     import NowPlaying from '$lib/components/NowPlaying.svelte'
 </script>
 
-Ever since I saw <a href="https://leerob.io/">this implementation of the Spotify API in Next.js</a> (check the footer), I've been wanting to do the same thing in SvelteKit. Knowing the song someone's listening to in that very moment makes an otherwise mostly static website feel pretty dynamic.
+Ever since I saw [this implementation of the Spotify API in Next.js](https://leerob.io/) (check the footer), I've been wanting to do the same thing in SvelteKit. Knowing the song someone's listening to in that very moment makes an otherwise mostly static website feel pretty dynamic.
 
-So, I resumed my quest into the world of API's, requests and endpoints from where I left off: <a href="https://www.koenraijer.io/blog/svelteKit-endpoints">Fetching from a public API with SvelteKit Endpoints</a>.
+So, I resumed my quest into the world of API's, requests and endpoints from where I left off: [Fetching from a public API with SvelteKit Endpoints](https://www.koenraijer.io/blog/svelteKit-endpoints).
 
 I learned a lot about HTTP methods, SvelteKit endpoints and I learned about [Postman](https://www.postman.com/) as an easy way to test API requests. Scattered throughout this post are many links to resources that helped me figure things out. They might be of interest to you as a refresher or as a starting point for further learning.
 
-## 0.1 What are we going to do? 
-We are going to use the <a href="https://developer.spotify.com/documentation/general/guides/authorization/code-flow/">Authorization Code Flow</a> to get access to the Spotify Web API. We'll use our access to get data about the track we're listening to in that moment, as well as our 20 top tracks of the past half year. We'll do that using SvelteKit endpoints, which will be run server-side as [serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions). The data will be accessible to our frontend using those endpoints. We'll fetch it and display it nicely in a Svelte component.
+## Introduction
+We are going to use the [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) to get access to the Spotify Web API. We'll use our access to get data about the track we're listening to in that moment, as well as our 20 top tracks of the past half year. We'll do that using SvelteKit endpoints, which will be run server-side as [serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions). The data will be accessible to our frontend using those endpoints. We'll fetch it and display it nicely in a Svelte component.
 
 This is what that's going to look like: 
 
 <NowPlaying/>
 
-## 0.2 Creating a Spotify app
+## Create a Spotify app
 Follow [this tutorial](https://developer.spotify.com/documentation/general/guides/authorization/app-settings/) to create your own Spotify app. 
 - `edit settings` and add `http://localhost:3000` to  Redirect URIs. Make sure to click **Add, and then save** at the bottom of the pop-up. 
 
 Notice the *Client ID* and the *Client Secret* (for which you first have to press *Show Client Secret*), on the app overview page.
 
-## 0.3 Storing variables in .env
+## Store variables in .env
 Create `src > .env`. Add your client ID and client secret. Make sure you prefix the name with `VITE_` ([otherwise you can't import them locally](https://vitejs.dev/guide/env-and-mode.html#env-files)). We will later pass these to Vercel as environment variables to Vercel, meaning they won't be exposed to the client. 
 
 ```js
@@ -48,7 +47,7 @@ VITE_SPOTIFY_CLIENT_SECRET=<clientsecret>
 
 We will come back to this later. First, let's take a look at the Authorization Code Flow. 
 
-## 0.4 Authorization Code Flow
+## Authorization Code Flow
 <Image src="/blog/AuthG_AuthoriztionCode.png" alt="Spotify Web API's Authorization Code Flow visualized" halfbleed />
 
 This image provides a pretty clear overview of the steps needed to get data from the Spotify Web API. 
@@ -58,7 +57,7 @@ It shows that we need to:
 - Use that refresh token to get an access token
 - Use the access token to get our data 
 
-## 1.0 Requesting user authorization
+## Requesting user authorization
 We should send a GET request to `https://accounts.spotify.com/authorize` with the following parameters:
 - `client_id` (we know this already)
 - `response_type`: must set this to `code`.
@@ -79,7 +78,7 @@ http://localhost:3000/?code=<code>
 
 Save the code for now. We'll use it to get a Refresh Token. 
 
-## 2.0 Getting a Refresh Token
+## The Refresh Token
 Next, we'll use the command-line tool [cURL](https://en.wikipedia.org/wiki/CURL) to send a POST request to the Spotify API Token endpoint. We pass it our request headers using `-H`, and our request body parameters using `-d` (Check out [this list of `curl` options](https://gist.github.com/eneko/dc2d8edd9a4b25c5b0725dd123f98b10) if you're interesed).
 
 ```bash
@@ -105,7 +104,7 @@ VITE_SPOTIFY_CLIENT_SECRET=<clientsecret>
 VITE_SPOTIFY_REFRESH_TOKEN=<refreshtoken>
 ```
 
-## 3.0 Getting an Access Token
+## The Access Token
 Our Refresh Token is valid indefinitely, but we can't use it to request data from the Spotify API. For that, we'll need an Access Token. Each Access Token is only valid for 1 hour, so we'll need to request them programmatically. 
 
 So, create `src > routes > api > access_token.json.js`. This will be an [endpoint](https://kit.svelte.dev/docs/routing#endpoints) that exports a [request handler function](https://kit.svelte.dev/docs/types#sveltejs-kit-requesthandler) which sends a POST request to the correct Spotify endpoint and returns our Access Token. 
@@ -149,13 +148,13 @@ This code does the following:
 - Use `.then()` method ([docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)) to convert the response to json. 
 - Store the result as a constant using `const { access_token }`. This syntax uses [object destructuring](https://www.freecodecamp.org/news/how-to-destructure-objects-javascript/).
 
-## 4.0 Use our access token to send requests to the Spotify Web API
+## Getting our data
 
 The data on the now playing song and top tracks are probably better off in separate endpoints. We don't need the top tracks every time we update our now playing song, and vice versa. 
 
 So, we'll be creating two endpoints: `now_playing.json.js`, `top_tracks.json.js`.  
 
-### 4.1 now_playing endpoint
+### now_playing endpoint
 Create `src > routes > api > now_playing.json.js`, which will send a GET request and return data on the track we're currently playing. 
 
 ```js
@@ -198,7 +197,7 @@ export async function get() {
 
 You should now be able to see your newly created endpoint at `http://localhost:3000/api/now_playing.json`. 
 
-### 4.2 top_tracks endpoint
+### top_tracks endpoint
 Create `src > routes > api > top_tracks.json.js`. The code is very similar to the now_playing endpoint. 
 
 ```js
@@ -222,7 +221,8 @@ export async function get() {
 ```
 
 See it live at `http://localhost:3000/api/top_tracks.json`!
-### 4.3 An aside about dealing with API responses
+
+### Dealing with API responses
 In the above code, you can see I return `top_tracks` as `data.items`. I know I need `data.items` because I looked at what I got back from the request, using the following code: 
 
 ```html
@@ -231,7 +231,7 @@ In the above code, you can see I return `top_tracks` as `data.items`. I know I n
 
 Check out [JSON.stringify() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) for more information. 
 
-## 5.0 Creating our NowPlaying component 
+## The NowPlaying component 
 
 Create `src > lib > components > NowPlaying.svelte`. This will be a component that calls the `now_playing.json` endpoint and displays the song we're currently playing. It uses Tailwind CSS for styling. 
 
@@ -334,7 +334,7 @@ I posted this mostly, so you can be inspired to create your own custom component
 - It uses Svelte `{#if}` syntax to display the currently playing song, or "Not playing - Spotify" based on whether I am playing a song or not. 
 - The currently playing song has a CSS animation mimicing sound waves that I ~~stole~~ adapted  from [this codepen](https://codepen.io/BramKrekels/pen/WoeQdy). That accounts for all the contents of the `<style` tag. 
 
-## 6.0 Creating the Dashboard
+## Creating the Dashboard
 
 Create `src > routes > dashboard.svelte`. This page will fetch our top tracks from our `top_tracks.json` endpoint. 
 
@@ -369,7 +369,7 @@ Create `src > routes > dashboard.svelte`. This page will fetch our top tracks fr
 </div>
 ```
 
-## 7.0 Room for improvement
+## Room for improvement
 
 I am sure there are several ways this code can be improved. These are some of the things I already thought of: 
 - [Shadow endpoints](https://github.com/sveltejs/kit/issues/3532) could be used if you don't plan on adding more stuff to the dashboard. They make `load` boilerplate unnecessary in many cases, but they haven't been added to the documentation so far. 

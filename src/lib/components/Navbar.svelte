@@ -1,8 +1,10 @@
 
 <script>
   import {browser} from '$app/env'
-  import { active_heading, page_height, page_offset } from "$lib/stores";
+  import { active_heading } from "$lib/stores";
   import {fade} from 'svelte/transition'
+  import {navigating} from '$app/stores'
+  import {beforeNavigate, afterNavigate} from '$app/navigation'
   import P from "./markdown/P.svelte";
   export let currentRoute;
 
@@ -10,7 +12,6 @@
   let title = array[array.length - 1].replace(/^\w/, (c) => c.toUpperCase());
 
   $: heading = $active_heading === null || $active_heading === undefined ? title : $active_heading
-
 
   const setProgressBar = () => {
     if(browser) {
@@ -22,14 +23,26 @@
   }
   
   let progressBar;
+  let navBar
 
+  $: if(browser) {
+		if($navigating) {
+			$active_heading = null
+      }
+	}
+
+  afterNavigate(({ from, to, cancel }) => {
+    navBar.classList.remove('hidden')
+  })
+  beforeNavigate(({ from, to, cancel }) => {
+      navBar.classList.add('hidden')
+  });
 </script>
 
 <svelte:window on:load={setProgressBar} on:scroll={setProgressBar}/>
 
-<div id="progressBar" class="h-1 fixed top-0 left-0 bg-black w-0 !z-50" bind:this={progressBar}></div>
-<nav class="fixed bg-white/90 dark:bg-[#212121e6] top-0 w-full h-fit px-4 py-2 !z-50 text-sm">
-  <div class="relative w-full h-1 transition-[width]">  </div>
+<div id="progressBar" class="h-1 bg-gray-200 dark:bg-gray-500 fixed top-0 left-0  w-0 !z-[55]" bind:this={progressBar}></div>
+<nav bind:this={navBar} class="fixed bg-white dark:bg-[#212121e6] top-0 w-full h-fit px-4 py-2 !z-50 text-base">
   <a class="font-[500] hover:underline whitespace-nowrap dark:text-white" href="/">Koen Raijer&nbsp;</a> 
   <span class="text-gray-500">|</span>
       {#key heading}

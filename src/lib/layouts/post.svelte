@@ -1,6 +1,7 @@
 <script context="module">
   import A from '$lib/components/markdown/A.svelte'
   import Blockquote from '$lib/components/markdown/Blockquote.svelte'
+  import {theme} from '$lib/stores'
   export { A as a}
   export { Blockquote as blockquote}
 </script>
@@ -14,7 +15,7 @@
     export let title
     export let subtitle
     export let date
-    export let updated;
+    export let updated = '';
     export let toc = true;
 
     $seo.title = title;
@@ -37,36 +38,37 @@
 	<meta name="twitter:title" content={$seo.title} />
 </svelte:head>
 
-<article class="relative max-w-[75ch] mx-auto px-6 md:px-8 pt-8">
-  <div class="text-base prose prose-p:text-base-content prose-ul:text-base-content prose-li:text-base-content prose-headings:font-[500] prose-a:no-underline !text-white dark:prose-p:text-white dark:prose-headings:text-white dark:prose-a:text-primary dark:prose-li:text-white dark:prose-code:text-white dark:prose-strong:text-white dark:prose-[time]:text-white dark:prose-ol:text-white dark:prose:text-white">
-    <h1 class="pb-4 text-2xl">{title}</h1>
+<article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8">
+    <time title="Date first published" class=" text-gray-400" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+    {#if updated}
+      <time title="Date of last major modification" class="ml-2 p-[0.2rem] text-sm border-b border-l border-gray-500 rounded-bl" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+    {/if}
+    <h1 class="mt-4 text-3xl font-semibold">{title}</h1>
+
     {#if show_image}
       <Image alt="Banner image for post with title: {title}" src="{image}" halfbleed />
     {/if}
+
     {#if toc}
-      <time title="Date first published" class="text-sm text-gray-500" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> (<time title="Date of last major modification" class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>)
-      <ToC title={title} allowedHeadings={['h2', 'h3', 'h4', 'h5', 'h6']} />
-    {:else}
-      <time title="Date first published" class="text-sm text-gray-500" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time> (<time title="Date of last major modification" class="text-sm" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>)
-      <hr class="mt-2">
+      <ToC title={title} allowedHeadings={['h2', 'h3', 'h4']} />
     {/if}
+
     <slot></slot>
 
-    <div class="h-full w-full">
+    <div class="mt-12">
       <Giscus
       repo="koenraijer/utterances"
       repoId="R_kgDOHLAsiQ"
       category="Announcements"
       categoryId="DIC_kwDOHLAsic4COjlc"
-      mapping="url"
+      mapping="pathname"
       term="Welcome to @giscus/svelte component!"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme="light"
+      theme={$theme === "light" ? "light" : "transparent_dark"}
       lang="en"
       />
     </div>
-  </div>
 
 </article>
