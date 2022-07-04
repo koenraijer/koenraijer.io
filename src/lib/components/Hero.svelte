@@ -11,7 +11,7 @@
 <section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-center">
     <div class="col-span-3 row-start-2 sm:row-start-1">
         <h1 class="text-3xl font-[500] sm:pt-0 pt-4 pb-4">Koen Raijer</h1>
-      <h2 class="leading-7">Medicine student and aspiring psychiatrist / data scientist.<br> Building <Link href="https://studio.koenraijer.io">websites for the KiKa Foundation</Link>.</h2>
+      <h2 class="leading-7">Medicine student and aspiring psychiatrist / data scientist.</h2>
       <div class="flex flex-row flex-wrap gap-2 items-stretch mt-4">
             <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm" aria-label="LinkedIn" rel="noopener" href="/dashboard">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="24 128 56 128 96 40 160 208 200 128 232 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>

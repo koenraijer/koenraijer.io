@@ -93,7 +93,7 @@
 
 <svelte:window on:scroll={setActiveHeading} />
 
-<nav class="float-left bg-gray-100 text-black dark:bg-[#333] dark:text-white rounded-md not-prose px-6 py-4 w-fit h-full mr-8 mb-4">
+<nav class="sm:float-left bg-gray-100 text-black dark:bg-[#333] dark:text-white rounded-md not-prose px-6 py-4 w-fit h-full mr-8 mb-4">
   <ul class="">
   {#each headings as heading}
       <li

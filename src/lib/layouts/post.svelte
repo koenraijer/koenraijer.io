@@ -38,12 +38,12 @@
 	<meta name="twitter:title" content={$seo.title} />
 </svelte:head>
 
-<article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8">
+<article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8">
     <time title="Date first published" class=" text-gray-400" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
     {#if updated}
       <time title="Date of last major modification" class="ml-2 p-[0.2rem] text-sm border-b border-l border-gray-500 rounded-bl" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
     {/if}
-    <h1 class="mt-4 text-3xl font-semibold">{title}</h1>
+    <h1 class="mt-2 text-3xl font-bold hover:no-underline">{title}</h1>
 
     {#if show_image}
       <Image alt="Banner image for post with title: {title}" src="{image}" halfbleed />

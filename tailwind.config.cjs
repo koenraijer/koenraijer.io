@@ -15,10 +15,10 @@ const config = {
             // works only with unitless numbers
             // This numbers are the defaults settings
             settings: {
-                fontSizeMin: 1.05, // 1.125rem === 18px
-                fontSizeMax: 1.125, // 1.25rem === 20px
-                ratioMin: 1.175, // Multiplicator Min
-                ratioMax: 1.25, // Multiplicator Max
+                fontSizeMin: 1.125, // 1.125rem === 18px
+                fontSizeMax: 1.25, // 1.25rem === 20px
+                ratioMin: 1.125, // Multiplicator Min
+                ratioMax: 1.375, // Multiplicator Max
                 screenMin: 20, // 20rem === 320px
                 screenMax: 96, // 96rem === 1536px
                 unit: 'rem', // default is rem but it's also possible to use 'px'
