@@ -10,6 +10,7 @@
     import ToC from "$lib/components/ToC.svelte";
     import Image from '$lib/components/Image.svelte'
     import Giscus from '@giscus/svelte'
+    import ToTop from '$lib/components/toTop.svelte';
     export let image
     export let show_image = false;
     export let title
@@ -70,5 +71,6 @@
       lang="en"
       />
     </div>
+    <ToTop/>
 
 </article>
