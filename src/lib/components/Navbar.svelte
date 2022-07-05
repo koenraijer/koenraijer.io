@@ -42,6 +42,7 @@
 <svelte:window on:load={setProgressBar} on:scroll={setProgressBar}/>
 
 <div id="progressBar" class="h-1 bg-gray-200 dark:bg-gray-500 fixed top-0 left-0  w-0 !z-[55]" bind:this={progressBar}></div>
+<!--
 <nav bind:this={navBar} class="fixed bg-white dark:bg-[#212121e6] top-0 w-full h-fit px-4 py-2 !z-50 text-base">
   <a class="font-[500] hover:underline whitespace-nowrap dark:text-white" href="/">Koen Raijer&nbsp;</a> 
   <span class="text-gray-500">|</span>
@@ -49,3 +50,4 @@
         <span in:fade class=" text-gray-500"> {heading}</span>
       {/key}
 </nav>
+-->

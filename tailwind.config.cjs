@@ -54,6 +54,9 @@ const config = {
             gridTemplateRows: {
                 'featuredRows': 'minmax(auto, 25vh) minmax(50%, auto)'
             },
+            fontFamily: {
+              sans: [ ...defaultTheme.fontFamily.sans]
+            },
             typography: (theme) => ({
                 DEFAULT: {
                   css: {
