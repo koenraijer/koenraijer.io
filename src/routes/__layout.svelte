@@ -58,6 +58,7 @@
 </script>
 
 <svelte:head>
+	<script>document.documentElement.className=localStorage.getItem("theme")||""</script>
 	<title>{$seo.title}</title>
 	<meta name="description" content={$seo.description} />
 
