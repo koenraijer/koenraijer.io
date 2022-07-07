@@ -11,6 +11,9 @@
     import Image from '$lib/components/Image.svelte'
     import Giscus from '@giscus/svelte'
     import ToTop from '$lib/components/toTop.svelte';
+    import {browser} from '$app/env'
+    import {page_offset} from '$lib/stores'
+    
     export let image
     export let show_image = false;
     export let title
@@ -24,6 +27,16 @@
     if(image)
       $seo.openGraphURL = "https://www.koenraijer.io" + image;
 
+      const setProgressBar = () => {
+        if(browser) {
+          let scrollDist = document.documentElement.scrollTop || document.body.scrollTop;
+          let progressWidth = (scrollDist / (document.body.scrollHeight - document.documentElement.clientHeight)) * 100;
+          progressBar.style.width = progressWidth + "%";
+          $page_offset = scrollDist;
+        }
+      }
+      
+      let progressBar;
 </script>
 
 <svelte:head>
@@ -38,6 +51,11 @@
 	<!--Twitter-->
 	<meta name="twitter:title" content={$seo.title} />
 </svelte:head>
+
+
+<svelte:window on:load={setProgressBar} on:scroll={setProgressBar}/>
+
+<div id="progressBar" class="h-1 bg-gray-300 dark:bg-gray-400 fixed top-0 left-0  w-0 !z-[55]" bind:this={progressBar}></div>
 
 <article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8">
     <time title="Date first published" class=" text-gray-400" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>

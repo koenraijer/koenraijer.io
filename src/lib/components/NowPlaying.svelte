@@ -1,6 +1,5 @@
 <script>
     import {onMount} from 'svelte';
-    import {slide} from 'svelte/transition'
     let song;
 
     async function getNowPlaying() {

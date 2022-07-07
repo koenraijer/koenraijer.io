@@ -11,17 +11,6 @@
 
   $: heading = $active_heading === null || $active_heading === undefined ? title : $active_heading
 
-  const setProgressBar = () => {
-    if(browser) {
-      let scrollDist = document.documentElement.scrollTop || document.body.scrollTop;
-      let progressWidth = (scrollDist / (document.body.scrollHeight - document.documentElement.clientHeight)) * 100;
-      progressBar.style.width = progressWidth + "%";
-      $page_offset = scrollDist;
-    }
-  }
-  
-  let progressBar;
-
   $: if(browser) {
 		if($navigating) {
 			$active_heading = null
@@ -36,10 +25,6 @@
   });
   */
 </script>
-
-<svelte:window on:load={setProgressBar} on:scroll={setProgressBar}/>
-
-<div id="progressBar" class="h-1 bg-gray-200 dark:bg-gray-500 fixed top-0 left-0  w-0 !z-[55]" bind:this={progressBar}></div>
 
 <nav class="relative w-full">
   <div class="absolute w-full">
