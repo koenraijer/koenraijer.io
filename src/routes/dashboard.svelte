@@ -18,14 +18,14 @@
     
     <div>
         {#each top_tracks.top_tracks as track, index}
-            <div class="flex flex-row row-nowrap gap-4">
+            <div class="not-prose flex flex-row row-wrap gap-4">
                 <div class="flex flex-row row-nowrap gap-4 items-center">
                     <span class="text-base text-gray-500 dark:text-gray-400 w-4">{index + 1}</span>
-                    <img class="my-0 mb-4 mt-2 h-14 w-14" alt="{track.name}'s album cover" height={track.album.images[1].height} width={track.album.images[1].width} src={track.album.images[1].url}>
+                    <img class="my-0 mb-4 mt-2 h-14 w-14 !aspect-square" alt="{track.name}'s album cover" height={track.album.images[1].height} width={track.album.images[1].width} src={track.album.images[1].url}>
                 </div>
-                <a class="flex flex-col flex-nowrap group no-underline" href={track.external_urls.spotify} rel="noopener noreferrer" target="_blank">
-                    <span class=" text-black dark:text-white">{track.name}</span> 
-                    <span class="!group-hover:no-underline text-gray-500 dark:text-gray-300">{track.artists[0].name}</span>
+                <a class="flex flex-col flex-wrap group no-underline" href={track.external_urls.spotify} rel="noopener noreferrer" target="_blank">
+                    <span class=" text-black dark:text-white text-ellipsis overflow-hidden inline-block whitespace-nowrap">{track.name}</span> 
+                    <span class="!group-hover:no-underline text-gray-500 dark:text-gray-300 text-ellipsis overflow-hidden inline-block whitespace-nowrap">{track.artists[0].name}</span>
                 </a>
             </div>
         {/each}

@@ -1,12 +1,8 @@
 <script>
         import Link from '$lib/components/markdown/A.svelte'
-        import theme from '$lib/stores';
         import {browser} from "$app/env"
         import NowPlaying from '$lib/components/NowPlaying.svelte'
-        let light_theme = true;
-
-        $: light_theme = $theme === 'light';
-        // https://rodneylab.com/using-local-storage-sveltekit/
+        import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
 <section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-start">
     <div class="col-span-3 row-start-2 sm:row-start-1">
@@ -30,13 +26,7 @@
             <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm" target="_blank" aria-label="LinkedIn" rel="noopener" href="mailto:koenrayer@gmail.com">
                 <svg xmlns="http://www.w3.org/2000/svg" width=16 height=16 class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a0,0,0,0,1,0,0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><line x1="110.5" y1="128" x2="34.5" y2="197.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="221.5" y1="197.7" x2="145.5" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
             </a>
-            <button on:click={() => (light_theme ? theme.set('dark') : theme.set('light'))} class="inline-flex px-3 py-1 rounded-md items-center transition-colors decoration-none {light_theme ? "hover:bg-[#191970] bg-gray-100 hover:text-white" : "hover:bg-[#FFCC33] bg-gray-50/10 hover:text-[#212121]"} text-sm" target="_blank" aria-label="LinkedIn" rel="noopener" href="mailto:koenrayer@gmail.com">
-                {#if light_theme } <!--Show moon-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
-                {:else}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="60" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><line x1="128" y1="28" x2="128" y2="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="198.7" y1="57.3" x2="204.4" y2="51.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="228" y1="128" x2="236" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="198.7" y1="198.7" x2="204.4" y2="204.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="128" y1="228" x2="128" y2="236" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="57.3" y1="198.7" x2="51.6" y2="204.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="28" y1="128" x2="20" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="57.3" y1="57.3" x2="51.6" y2="51.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
-                {/if}
-            </button>
+            <ThemeToggle/>
             <NowPlaying/>
         </div>
     </div>

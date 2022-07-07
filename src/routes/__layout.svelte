@@ -89,7 +89,7 @@
 		<Navbar {currentRoute} {page_height}/>
 	{/if}
 	{#key currentRoute}
-		<main class="flex-grow pt-8 pb-8 md:pt-16 dark:bg-[#212121] dark:text-white" in:fade={{ duration: 75 }} out:fade={{ duration: 75 }}>
+		<main class="flex-grow pt-8 pb-8 md:pt-16 dark:bg-[#212121] dark:text-white" in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}>
 			<slot />
 		</main>
 	{/key}

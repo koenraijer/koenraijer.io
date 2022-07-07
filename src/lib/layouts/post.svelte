@@ -71,5 +71,5 @@
       lang="en"
       />
     </div>
-    <ToTop/>
 </article>
+<ToTop/>
