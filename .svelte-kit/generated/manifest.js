@@ -10,6 +10,7 @@ const c = [
 	() => import("../../src/routes/blog/lost-in-programming.md"),
 	() => import("../../src/routes/blog/svelteKit-endpoints.md"),
 	() => import("../../src/routes/blog/endnote-tutorial.md"),
+	() => import("../../src/routes/blog/south-africa.md"),
 	() => import("../../src/routes/blog/spotify-api.md")
 ];
 
@@ -43,8 +44,11 @@ export const routes = [
 	// src/routes/blog/endnote-tutorial.md
 	[/^\/blog\/endnote-tutorial\/?$/, [c[0], c[10]], [c[1]]],
 
+	// src/routes/blog/south-africa.md
+	[/^\/blog\/south-africa\/?$/, [c[0], c[11]], [c[1]]],
+
 	// src/routes/blog/spotify-api.md
-	[/^\/blog\/spotify-api\/?$/, [c[0], c[11]], [c[1]]]
+	[/^\/blog\/spotify-api\/?$/, [c[0], c[12]], [c[1]]]
 ];
 
 // we import the root layout/error components eagerly, so that

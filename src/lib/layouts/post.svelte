@@ -57,7 +57,7 @@
 
 <div id="progressBar" class="h-1 bg-gray-300 dark:bg-gray-400 fixed top-0 left-0  w-0 !z-[55]" bind:this={progressBar}></div>
 
-<article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8">
+<article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 px-6 md:px-8 pt-8 prose-p:text-base">
     <time title="Date first published" class=" text-gray-400" datetime="{date}">{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
     {#if updated}
       <time title="Date of last major modification" class="ml-2 p-[0.2rem] text-sm border-b border-l border-gray-500 rounded-bl" datetime="{updated}">{new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
