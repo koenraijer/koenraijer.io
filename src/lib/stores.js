@@ -4,7 +4,7 @@ import { browser } from '$app/env';
 export const seo = writable(
     {
         title: "Koen Raijer",
-        description: "I'm a medicine student who dabbles in web development and data science. Currently building websites for charity.",
+        description: "Medicine student and aspiring psychiatrist / data scientist.",
         openGraphURL: 'https://www.koenraijer.io/blog/ogimage_avatar.png'
     }
 )
