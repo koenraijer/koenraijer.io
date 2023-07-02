@@ -29,10 +29,10 @@
 	<link rel="preload" href="/avatar2.webp" as="image">
 </svelte:head>
 
-<div class="max-w-[75ch] mx-auto px-6 md:px-8">
+<div class="max-w-[75ch] mx-auto px-4 md:px-6">
     <Hero/>
 
-  <article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 pt-8 prose-p:text-base">
+  <article class="prose dark:prose-invert hover:prose-a:no-underline hover:prose-headings:underline hover:prose-h1:no-underline dark:prose-pre:bg-[#333] w-full mx-auto mb-16 md:mt-8 prose-p:text-base">
     <p>With a background in medicine and data science, I operate where computer meets mind, where numbers meet qualia, where new meets old.</p>
 
     <p>The next couple years may lead me into a career in psychiatry and/or a PhD in mental health technology, and/or medical science data consultancy work.</p>
