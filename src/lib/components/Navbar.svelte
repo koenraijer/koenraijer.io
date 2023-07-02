@@ -19,7 +19,7 @@
     }
 </script>
 
-<nav class="relative w-full h-12">
+<nav class="relative w-full">
   <div class="absolute w-full">
     <div class="flex flex-row row-nowrap justify-between p-4 dark:text-white h-full">
       <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm" aria-label="Home" rel="noopener" href="/">
