@@ -17,6 +17,8 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { fade } from 'svelte/transition';
+	import NowPlaying from '$lib/components/NowPlaying.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	export let currentRoute;
 	import {theme, active_heading, page_height, page_offset} from '$lib/stores'
 	import {browser} from '$app/env'
@@ -83,11 +85,8 @@
 	<link rel="preload" href="/avatar2.webp" as="image">
 </svelte:head>
 
-
 <div class="flex flex-col overflow-x-hidden min-h-screen">
-	{#if currentRoute !== "/" }
-		<Navbar {currentRoute} {page_height}/>
-	{/if}
+	<Navbar {currentRoute} {page_height}/>
 	{#key currentRoute}
 		<main class="flex-grow pt-8 pb-8 md:pt-16 dark:bg-[#212121] dark:text-white" in:fade={{ duration: 100 }} out:fade={{ duration: 100 }}>
 			<slot />

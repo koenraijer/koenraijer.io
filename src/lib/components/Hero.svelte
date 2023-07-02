@@ -1,41 +1,28 @@
-<script>
-        import Link from '$lib/components/markdown/A.svelte'
-        import {browser} from "$app/env"
-        import NowPlaying from '$lib/components/NowPlaying.svelte'
-        import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-</script>
-<section class="pb-12 md:pb-16 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-start">
+<section class="pb-4 md:pb-8 grid grid-cols-1 sm:grid-cols-4 gap-x-8 items-start">
     <div class="col-span-3 row-start-2 sm:row-start-1">
         <h1 class="text-3xl font-[500] sm:pt-0 pt-4 pb-2">Koen Raijer</h1>
-      <h2 class="leading-7 pb-2 text-base">Medicine student and aspiring psychiatrist / data scientist.</h2>
-      <div class="flex flex-row flex-wrap gap-2 items-stretch mt-4">
-            <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm" aria-label="LinkedIn" rel="noopener" href="/dashboard">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="24 128 56 128 96 40 160 208 200 128 232 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline></svg>
-                &nbsp;Dashboard
-            </a> 
-            <a class="inline-flex px-3 py-1 rounded-md items-center  transition-colors decoration-none text-sm bg-gray-100 hover:bg-[#333] hover:text-white dark:text-white dark:bg-gray-50/10 dark:hover:bg-black" target="_blank" aria-label="Github" rel="noopener" href="https://github.com/koenraijer/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="fill-current h-4 w-4"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      <h2 class="leading-7 pb-2 text-base">Medicine student and aspiring psychiatrist / data scientist.
+      </h2>
+      <div class="flex flex-row flex-wrap gap-2 mt-4">
+            <a class="inline-flex px-3 py-1 rounded-md items-center transition-colors decoration-none text-sm bg-gray-100 hover:bg-[#333] hover:text-white dark:text-white dark:bg-gray-50/10 dark:hover:bg-black" target="_blank" aria-label="Github" rel="noopener" href="https://github.com/koenraijer/">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M212.62,75.17A63.7,63.7,0,0,0,206.39,26,12,12,0,0,0,196,20a63.71,63.71,0,0,0-50,24H126A63.71,63.71,0,0,0,76,20a12,12,0,0,0-10.39,6,63.7,63.7,0,0,0-6.23,49.17A61.5,61.5,0,0,0,52,104v8a60.1,60.1,0,0,0,45.76,58.28A43.66,43.66,0,0,0,92,192v4H76a20,20,0,0,1-20-20,44.05,44.05,0,0,0-44-44,12,12,0,0,0,0,24,20,20,0,0,1,20,20,44.05,44.05,0,0,0,44,44H92v12a12,12,0,0,0,24,0V192a20,20,0,0,1,40,0v40a12,12,0,0,0,24,0V192a43.66,43.66,0,0,0-5.76-21.72A60.1,60.1,0,0,0,220,112v-8A61.5,61.5,0,0,0,212.62,75.17ZM196,112a36,36,0,0,1-36,36H112a36,36,0,0,1-36-36v-8a37.87,37.87,0,0,1,6.13-20.12,11.65,11.65,0,0,0,1.58-11.49,39.9,39.9,0,0,1-.4-27.72,39.87,39.87,0,0,1,26.41,17.8A12,12,0,0,0,119.82,68h32.35a12,12,0,0,0,10.11-5.53,39.84,39.84,0,0,1,26.41-17.8,39.9,39.9,0,0,1-.4,27.72,12,12,0,0,0,1.61,11.53A37.85,37.85,0,0,1,196,104Z"></path></svg>
                 &nbsp;Github
             </a>
-            <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-[#0077b5] dark:hover:bg-[#0077b5] dark:hover:text-white dark:bg-gray-50/10 text-sm" target="_blank" aria-label="Github" rel="noopener" href="https://www.linkedin.com/in/koen-raijer-3495a7127/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><rect x="36" y="36" width="184" height="184" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></rect><line x1="124" y1="120" x2="124" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="84" y1="120" x2="84" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><path d="M124,148a28,28,0,0,1,56,0v28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><circle cx="84" cy="80" r="16"></circle></svg>        
+            <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-[#0077b5] dark:hover:bg-[#0077b5] hover:text-white dark:bg-gray-50/10 text-sm" target="_blank" aria-label="Github" rel="noopener" href="https://www.linkedin.com/in/koen-raijer-3495a7127/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><rect x="36" y="36" width="184" height="184" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></rect><line x1="124" y1="120" x2="124" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="84" y1="120" x2="84" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><path d="M124,148a28,28,0,0,1,56,0v28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><circle cx="84" cy="80" r="16"></circle></svg>   
+                &nbsp;LinkedIn    
             </a>
             <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-[#f4f1ea] dark:hover:text-gray-900 dark:hover:bg-[#f4f1ea] dark:bg-gray-50/10 text-sm" target="_blank" aria-label="LinkedIn" rel="noopener" href="https://www.goodreads.com/koenraijer/">
-                <svg width="24" height="24" viewBox="0 0 32 32"><path fill="currentColor" d="M5 5v22h22V5H5zm2 2h18v18H7V7zm8.5 2c-2.481 0-4.5 2.243-4.5 5s2.019 5 4.5 5c1.421 0 2.675-.75 3.5-1.896V18.5c0 1.93-1.57 3.5-3.5 3.5a3.495 3.495 0 0 1-3.148-2h-1.077c.621 1.742 2.272 3 4.225 3c2.481 0 4.5-2.019 4.5-4.5V10h-1v.896C18.175 9.75 16.921 9 15.5 9zm0 1c1.93 0 3.5 1.794 3.5 4s-1.57 4-3.5 4s-3.5-1.794-3.5-4s1.57-4 3.5-4z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M184,20a12,12,0,0,0-12,12v4.22A67.94,67.94,0,0,0,60,88v24a67.94,67.94,0,0,0,112,51.78V168a44.05,44.05,0,0,1-44,44c-15,0-30.29-7.58-38.16-18.87a12,12,0,0,0-19.68,13.74C82.5,224.56,105.21,236,128,236a68.07,68.07,0,0,0,68-68V32A12,12,0,0,0,184,20ZM128,156a44.05,44.05,0,0,1-44-44V88a44,44,0,0,1,88,0v24A44.05,44.05,0,0,1,128,156Z"></path></svg>
+                &nbsp;Goodreads    
             </a>
 
             <a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm" target="_blank" aria-label="LinkedIn" rel="noopener" href="mailto:koenrayer@gmail.com">
-                <svg xmlns="http://www.w3.org/2000/svg" width=16 height=16 class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></polyline><path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56a0,0,0,0,1,0,0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><line x1="110.5" y1="128" x2="34.5" y2="197.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line><line x1="221.5" y1="197.7" x2="145.5" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg"  class="h-5 w-5" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"></path></svg>
+                &nbsp;Email
             </a>
-            <ThemeToggle/>
-            <NowPlaying/>
         </div>
     </div>
 
-    <img height="16" width="16" alt="Avatar of Koen" class="mask mask-circle aspect-auto sm:col-span-2 row-start-1 h-20 w-20 sm:mt-4 sm:w-5/6 sm:h-auto" src="/avatar2.webp">
+    <img height="16" width="16" alt="Avatar of Koen" class="mask mask-circle aspect-auto sm:col-span-2 row-start-1 h-20 w-20 sm:mt-4 sm:w-5/6 sm:h-auto" src="/avatar3.webp">
 </section>
-<!--
-<a class="inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none hover:bg-[#1DA1F2] dark:hover:bg-[#1DA1F2]  hover:text-white dark:bg-gray-50/10 text-sm" target="_blank" aria-label="LinkedIn" rel="noopener" href="https://twitter.com/koenraijer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,88c0-22,18.5-40.3,40.5-40a40,40,0,0,1,36.2,24H240l-32.3,32.3A127.9,127.9,0,0,1,80,224c-32,0-40-12-40-12s32-12,48-36c0,0-64-32-48-120,0,0,40,40,88,48Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
-</a>
--->

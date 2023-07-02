@@ -29,7 +29,7 @@
     */
 </script>
 
-    <div class="group inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none dark:bg-gray-50/10 text-sm {song ? "hover:bg-[#1DB954] dark:hover:bg-[#1DB954]" : ""}">
+    <div class="group h-full inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors decoration-none dark:bg-gray-50/10 text-sm {song ? "hover:bg-[#1DB954] dark:hover:bg-[#1DB954]" : ""} hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10">
         {#if !song}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></circle><path d="M179.1,116.3a112.1,112.1,0,0,0-102.3.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path><path d="M158.7,155.3A68.4,68.4,0,0,0,128,148a67.6,67.6,0,0,0-30.8,7.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg>
         &nbsp;Loading - <span class="text-gray-400">&nbsp;Spotify</span>        

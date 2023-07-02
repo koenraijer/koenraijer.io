@@ -2,7 +2,7 @@ const c = [
 	() => import("../../src/routes/__layout.svelte"),
 	() => import("../../src/routes/__error.svelte"),
 	() => import("../../src/routes/index.svelte"),
-	() => import("../../src/routes/dashboard.svelte"),
+	() => import("../../src/routes/blog/index.svelte"),
 	() => import("../../src/routes/blog/styling-obsidian-frontmatter-in-live-preview.md"),
 	() => import("../../src/routes/blog/zotero-obsidian-quick-copy.md"),
 	() => import("../../src/routes/blog/motivational-interviewing.md"),
@@ -22,8 +22,8 @@ export const routes = [
 	// src/routes/index.svelte
 	[/^\/$/, [c[0], c[2]], [c[1]]],
 
-	// src/routes/dashboard.svelte
-	[/^\/dashboard\/?$/, [c[0], c[3]], [c[1]]],
+	// src/routes/blog/index.svelte
+	[/^\/blog\/?$/, [c[0], c[3]], [c[1]]],
 
 	// src/routes/blog/styling-obsidian-frontmatter-in-live-preview.md
 	[/^\/blog\/styling-obsidian-frontmatter-in-live-preview\/?$/, [c[0], c[4]], [c[1]]],
