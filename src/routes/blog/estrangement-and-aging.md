@@ -7,6 +7,7 @@ tags:
     - Personal
 category: essay
 layout: post
+toc: false
 ---
 
 For years, I've tried to hold on to my fondness of rap music. I used to listen to it every spare minute, absorbing the lyrics, bobbing my head. At some point, I must've started feeling some degree of self-consciousness. That feeling that tells you this just isn't exactly right anymore. I started looking into other music genres but none have stuck like rap did. It's been a growing source of confusion for me.
