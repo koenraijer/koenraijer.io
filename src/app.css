@@ -39,4 +39,8 @@
 	.prose :where(h2, h3, h4, h5, h6) :where(a):not(:where([class~="not-prose"] *)) {
 		@apply no-underline hover:underline
 	}
+
+	.social {
+		@apply inline-flex px-3 py-1 rounded-md items-center bg-gray-100 transition-colors hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900 hover:text-white dark:bg-gray-50/10 text-sm border dark:border-zinc-700 border-zinc-300
+	}
 }
